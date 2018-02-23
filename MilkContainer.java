@@ -7,15 +7,29 @@ public class MilkContainer {
 
 	public MilkContainer() {
 		milks = new ArrayList<Milk>();
-	} 
+	}
 
-	public void addCereal(Cereal cereal) {
-		if (milks.length() < DEFAULT_SIZE) {
+	public Milk getMilk(int index) {
+		return milks.get(index);
+	}
+
+	public void addMilk(Milk milk) {
+		if (milks.size() < DEFAULT_SIZE) {
 			milks.add(milk);
 		} 
 	}
 
-	public void delCereal(Cereal cereal) {
+	public void delMilk(Milk milk) {
 		milks.remove(milk);
 	} 
+
+	public String toString() {
+		String output = "";
+
+		for (Milk m : milks) {
+			output += m.getType() + " ";
+		}
+
+		return output;
+	}
 }

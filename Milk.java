@@ -11,6 +11,10 @@ public class Milk {
 		this.capacity = DEFAULT;
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
 	public int getCapacity() {
 		return this.capacity;
 	}

@@ -9,8 +9,12 @@ public class CerealContainer {
 		cereals = new ArrayList<Cereal>();
 	} 
 
+	public Cereal getCereal(int index) {
+		return cereals.get(index);
+	}
+
 	public void addCereal(Cereal cereal) {
-		if (cereals.length() < DEFAULT_SIZE) {
+		if (cereals.size() < DEFAULT_SIZE) {
 			cereals.add(cereal);
 		} 
 	}
@@ -18,4 +22,14 @@ public class CerealContainer {
 	public void delCereal(Cereal cereal) {
 		cereals.remove(cereal);
 	} 
+
+	public String toString() {
+		String output = "";
+
+		for (Cereal c : cereals) {
+			output += c.getName() + " ";
+		}
+
+		return output;
+	}
 }

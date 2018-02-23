@@ -10,7 +10,11 @@ public class Cereal {
 		this.name = name;
 		this.capacity = DEFAULT;
 	}
-
+	
+	public String getName() {
+		return this.name;
+	} 
+	
 	public int getCapacity() {
 		return this.capacity;
 	}

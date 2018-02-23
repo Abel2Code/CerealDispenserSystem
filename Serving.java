@@ -15,6 +15,10 @@ public class Serving {
 	}
 	public void setSize(int size) {
 		this.size = size;
+	}
+
+	public String toString() {
+		return size + " " + cereal.getName() + " with " + milk.getType();
 	}	
 
 }
