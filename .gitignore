@@ -1,4 +1,8 @@
 *.class
+build.fxbuild
+.settings
+.classpath
+.project
 
 # Package Files #
 *.jar
