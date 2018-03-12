@@ -1,19 +1,36 @@
 package application;
-	
+
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
+			StartUpScreen start = new StartUpScreen();
+			MainMenu mainMenu = new MainMenu();
+			
+			BorderPane pane = new BorderPane();
+			Button r = new Button("hello");
+			
+			pane.setCenter(r);
+			Scene startScene = new Scene(start);
+			startScene.getStylesheets().add(start.getClass().getResource("StartUpScreen.css").toExternalForm());
+			startScene.getStylesheets().add(mainMenu.getClass().getResource("MainMenu.css").toExternalForm());
+			
+			start.setOnMouseClicked(e -> startScene.setRoot(mainMenu));
+			
+			primaryStage.setScene(startScene);
+			primaryStage.setFullScreen(true);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -24,3 +41,4 @@ public class Main extends Application {
 		launch(args);
 	}
 }
+

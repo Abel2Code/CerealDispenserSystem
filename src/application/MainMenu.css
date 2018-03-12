@@ -1,0 +1,23 @@
+#addFavorites{
+	-fx-border-radius: 30.0;
+	-fx-background-color: transparent;
+	-fx-border-color: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, red 50% , violet 75%, red 100%);
+	-fx-border-width: 8.0;
+	-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, red 50% , violet 75%, red 100%);
+	-fx-font-size: 85px;
+	-fx-font-weight: bold;
+	
+}
+
+#setting{
+	-fx-background-color: transparent;
+	-fx-border-color: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, red 50% , violet 75%, red 100%);
+	-fx-border-width: 8.0;
+	-fx-background-radius: 70.0;
+	-fx-min-height: 140.0;
+	-fx-min-width: 140.0;
+	-fx-text-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, red 50% , violet 75%, red 100%);
+	-fx-font-size: 60px;
+	-fx-font-weight: bold;
+	
+}
