@@ -13,14 +13,15 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 public class MainMenu extends StackPane{
+	private Button settingMenu;
 	
 	public MainMenu() {
 		Image img = new Image("cerealWallpaper.jpg");
 		ImageView iv = new ImageView(img);
-		Button setting = new Button("?");
-		setting.setShape(new Circle(700.0));
-		setting.setId("setting");
-		setAlignment(setting, Pos.BOTTOM_CENTER);
+		this.settingMenu = new Button("?");
+		settingMenu.setShape(new Circle(700.0));
+		settingMenu.setId("setting");
+		setAlignment(settingMenu, Pos.BOTTOM_CENTER);
 
 		HBox hbox = new HBox();
 		
@@ -35,9 +36,15 @@ public class MainMenu extends StackPane{
 		hbox.setSpacing(45.0);
 		setPadding(new Insets(0,0,20,0));
 		
-		getChildren().addAll(iv,hbox,setting);
+		getChildren().addAll(iv,hbox,settingMenu);
 		
 		hbox.setPadding(new Insets(200, 80, 0, 80));
 		
 	}
+
+	public Button getSettingMenu() {
+		return settingMenu;
+	}
+	
+	
 }

@@ -18,18 +18,20 @@ public class Main extends Application {
 		try {
 			StartUpScreen start = new StartUpScreen();
 			MainMenu mainMenu = new MainMenu();
+			Settings settingMenu = new Settings();
 			
 			BorderPane pane = new BorderPane();
 			Button r = new Button("hello");
 			
 			pane.setCenter(r);
-			Scene startScene = new Scene(start);
-			startScene.getStylesheets().add(start.getClass().getResource("StartUpScreen.css").toExternalForm());
-			startScene.getStylesheets().add(mainMenu.getClass().getResource("MainMenu.css").toExternalForm());
+			Scene mainScene = new Scene(start);
+			mainScene.getStylesheets().add(start.getClass().getResource("StartUpScreen.css").toExternalForm());
+			mainScene.getStylesheets().add(mainMenu.getClass().getResource("MainMenu.css").toExternalForm());
 			
-			start.setOnMouseClicked(e -> startScene.setRoot(mainMenu));
+			start.setOnMouseClicked(e -> mainScene.setRoot(mainMenu));
+			mainMenu.getSettingMenu().setOnAction(e -> mainScene.setRoot(settingMenu));
 			
-			primaryStage.setScene(startScene);
+			primaryStage.setScene(mainScene);
 			primaryStage.setFullScreen(true);
 			primaryStage.show();
 		} catch(Exception e) {
