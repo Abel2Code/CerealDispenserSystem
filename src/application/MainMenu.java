@@ -16,7 +16,7 @@ public class MainMenu extends StackPane{
 	private Button settingMenu;
 	
 	public MainMenu() {
-		Image img = new Image("cerealWallpaper.jpg");
+		Image img = new Image("wallpapers/cerealWallpaper.jpg");
 		ImageView iv = new ImageView(img);
 		this.settingMenu = new Button("?");
 		settingMenu.setShape(new Circle(700.0));

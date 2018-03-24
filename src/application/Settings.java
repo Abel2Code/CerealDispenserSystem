@@ -14,7 +14,7 @@ public class Settings extends BorderPane{
 
 	//Constructor
 	public Settings() {
-		Image img = new Image("cerealWallpaper.jpg");
+		Image img = new Image("wallpapers/cerealWallpaper.jpg");
 		ImageView iv = new ImageView(img);
 		getChildren().addAll(iv,topPane());
 	}

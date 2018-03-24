@@ -8,7 +8,7 @@ import javafx.scene.text.Text;
 
 public class StartUpScreen extends StackPane{
 	public StartUpScreen() {
-		Image image = new Image("cerealWallpaper.jpg");
+		Image image = new Image("wallpapers/cerealWallpaper.jpg");
 		ImageView view = new ImageView(image);
 	    Text touchBegin = new Text("Touch to Begin");
 	    touchBegin.setId("touchToBegin");
