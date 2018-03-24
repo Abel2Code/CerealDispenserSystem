@@ -1,19 +1,47 @@
 public class Cereal {
 	private String name;
 	private int capacity;
+	private int calories;
+	private int fat;
+	private int carbs;
+	private int protein;
+	private String cerealImg; 
 	private final int DEFAULT = 100;
 
 	public Cereal() {
 	}
 
-	public Cereal(String name) {
+	public Cereal(String name, int calories, int fat, int carbs, int protein, String cerealImg) {
 		this.name = name;
+		this.calories = calories;
+		this.fat = fat;
+		this.carbs = carbs;
+		this.protein = protein;
+		this.cerealImg = cerealImg;
 		this.capacity = DEFAULT;
 	}
 	
 	public String getName() {
 		return this.name;
-	} 
+	}
+
+	public String getCal() {
+		return this.calories;
+	}
+
+	public String getFat() {
+		return this.fat;
+	}
+	public String getCarbs() {
+		return this.carbs;
+	}
+	public String getProtein() {
+		return this.protein;
+	}
+
+	public String getImg() {
+		return this.cerealImg;
+	}
 	
 	public int getCapacity() {
 		return this.capacity;
