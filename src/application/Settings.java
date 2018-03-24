@@ -1,19 +1,37 @@
 package application;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.shape.Circle;
 
 
 public class Settings extends BorderPane{
+	private Button settingToMain;
 
 	//Constructor
 	public Settings() {
-		ToggleButton button = new ToggleButton("hello");
+		Image img = new Image("cerealWallpaper.jpg");
+		ImageView iv = new ImageView(img);
+		getChildren().addAll(iv,topPane());
+	}
+	
+	public void middlePane() {
 		
-			button.setOnAction(e -> button.setText("world"));
-		
-		setCenter(button);
-		
+	}
+	
+	public HBox topPane() {
+		HBox title = new HBox();
+		this.settingToMain = new Button("<");
+		this.settingToMain.setId("settingToMain");
+		this.settingToMain.setShape(new Circle(700.0));
+		Label settingTitle = new Label("Settings");
+		settingTitle.setId("settingTitle");
+		title.getChildren().addAll(this.settingToMain, settingTitle);
+		return title;
 	}
 	
 	/**

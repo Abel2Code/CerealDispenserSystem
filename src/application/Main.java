@@ -20,13 +20,11 @@ public class Main extends Application {
 			MainMenu mainMenu = new MainMenu();
 			Settings settingMenu = new Settings();
 			
-			BorderPane pane = new BorderPane();
-			Button r = new Button("hello");
-			
-			pane.setCenter(r);
+
 			Scene mainScene = new Scene(start);
-			mainScene.getStylesheets().add(start.getClass().getResource("StartUpScreen.css").toExternalForm());
-			mainScene.getStylesheets().add(mainMenu.getClass().getResource("MainMenu.css").toExternalForm());
+			mainScene.getStylesheets().add(start.getClass().getResource("styling/StartUpScreen.css").toExternalForm());
+			mainScene.getStylesheets().add(mainMenu.getClass().getResource("styling/MainMenu.css").toExternalForm());
+			mainScene.getStylesheets().add(settingMenu.getClass().getResource("styling/Settings.css").toExternalForm());
 			
 			start.setOnMouseClicked(e -> mainScene.setRoot(mainMenu));
 			mainMenu.getSettingMenu().setOnAction(e -> mainScene.setRoot(settingMenu));
