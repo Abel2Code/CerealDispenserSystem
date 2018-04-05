@@ -1,3 +1,4 @@
+package back_end;
 public class Serving {
 	private Cereal cereal;
 	private Milk milk;
