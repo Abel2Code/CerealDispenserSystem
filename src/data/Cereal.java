@@ -25,17 +25,17 @@ public class Cereal {
 		return this.name;
 	}
 
-	public String getCal() {
+	public int getCal() {
 		return this.calories;
 	}
 
-	public String getFat() {
+	public int getFat() {
 		return this.fat;
 	}
-	public String getCarbs() {
+	public int getCarbs() {
 		return this.carbs;
 	}
-	public String getProtein() {
+	public int getProtein() {
 		return this.protein;
 	}
 

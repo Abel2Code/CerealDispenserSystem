@@ -4,7 +4,7 @@ public class Driver {
 		MilkContainer mc = new MilkContainer();
 
 		Milk milk = new Milk("Normal Milk");
-		Cereal cereal = new Cereal("Honey Bunches");
+		Cereal cereal = new Cereal("Honey Bunches", 0, 0, 0 ,0, null);
 
 		cc.addCereal(cereal);
 		mc.addMilk(milk);
