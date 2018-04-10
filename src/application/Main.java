@@ -26,6 +26,7 @@ public class Main extends Application {
 			mainScene.getStylesheets().add(start.getClass().getResource("styling/StartUpScreen.css").toExternalForm());
 			mainScene.getStylesheets().add(mainMenu.getClass().getResource("styling/MainMenu.css").toExternalForm());
 			mainScene.getStylesheets().add(settingMenu.getClass().getResource("styling/Settings.css").toExternalForm());
+                        
 			
 			start.setOnMouseClicked(e -> mainScene.setRoot(mainMenu));
 			mainMenu.getSettingMenu().setOnAction(e -> mainScene.setRoot(settingMenu));

@@ -19,8 +19,8 @@ public class Container {
 	}
 
 	public void addCereal(Cereal cereal) {
-		if (cereals.size() < CEREAL_DEFAULT_SIZE) {
-			cereals.add(cereal);
+		if (cerealContainer.size() < CEREAL_DEFAULT_SIZE) {
+			cerealContainer.add(cereal);
 		} 
 	}
 

@@ -27,7 +27,7 @@ public class MainMenu extends StackPane{
 		
 		for(int i = 0; i < 4; i++) {
 			Button addFavorites = new Button("+");
-			addFavorites.setMinSize(400.0, 700.0);
+			//addFavorites.setMinSize(400.0, 700.0);
 			addFavorites.setId("addFavorites");
 			
 			hbox.getChildren().add(addFavorites);
