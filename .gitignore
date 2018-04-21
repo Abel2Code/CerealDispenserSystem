@@ -1,15 +1,4 @@
-*.class
-build.fxbuild
-.settings
-.classpath
-.project
+*
+!src/
+!src/**
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-*/bin
-*bin
-*.bin
-*bin

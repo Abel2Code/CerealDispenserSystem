@@ -16,7 +16,7 @@ public class MainMenu extends StackPane{
 	private Button settingMenu;
 	
 	public MainMenu() {
-		Image img = new Image("wallpapers/cerealWallpaper.jpg");
+		Image img = new Image("resources/wallpapers/cerealWallpaper.jpg");
 		ImageView iv = new ImageView(img);
 		this.settingMenu = new Button("?");
 		settingMenu.setShape(new Circle(700.0));
@@ -27,7 +27,7 @@ public class MainMenu extends StackPane{
 		
 		for(int i = 0; i < 4; i++) {
 			Button addFavorites = new Button("+");
-			addFavorites.setMinSize(400.0, 700.0);
+			//addFavorites.setMinSize(400.0, 700.0);
 			addFavorites.setId("addFavorites");
 			
 			hbox.getChildren().add(addFavorites);

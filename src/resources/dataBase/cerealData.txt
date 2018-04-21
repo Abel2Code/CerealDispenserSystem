@@ -1,0 +1,40 @@
+"Alpha Bits", "resources/cereal/alphabits.jpg", 120, 1.5, 24, 3
+"Apple Jacks", "resources/cereal/applejack.jpg", 110, 1, 25, 1
+"Cheerios", "resources/cereal/cheerios.jpg", 70, 1, 14, 2
+"Cinnamon Toast Crunch", "resources/cereal/cinnamontoastcrunch.jpg", 130, 3, 25, 1
+"Cocoa Krispies", "resources/cereal/cocoakrispies.jpg", 120, 1, 27, 1
+"Cocoa Pebbles", "resources/cereal/cocoapebbles.jpg", 120, 1, 25, 1
+"Cookie Crisp", "resources/cereal/ cookiecrisp.jpg", 100, 1, 22, 1
+"Corn Flakes", "resources/cereal/cornflakes.jpg", 100, 0, 25, 2
+"Count Chocula", "resources/cereal/countchocula.jpg", 110, 1.5, 23, 1
+"Cracklin Oat Bran", "resources/cereal/cracklin.jpg", 200, 7, 34, 4
+"Crispix", "resources/cereal/crispix.jpg", 110, 0, 25, 2
+"Crunch Berries", "resources/cereal/crunchberries.jpg", 150, 1.5, 22, 1
+"Froot Loops", "resources/cereal/frootloops.jpg", 110, 1, 25, 1
+"Frosted Flakes", "resources/cereal/frostedflakes.jpg", 110, 1, 25, 2
+"Fruity Pebbles", "resources/cereal/fruitypebbles.jpg", 110, 1, 23, 1
+"Golden Crisp", "resources/cereal/goldencrsip.jpg", 120, 0, 24, 1
+"Golden Grahams", "resources/cereal/goldengrahams.jpg", 120, 1, 27, 2
+"Go Lean Crunch", "resources/cereal/goleancrunch.jpg", 160, 0, 0, 6
+"Honey Bunches Of Oats", "resources/cereal/honeybunchesofoats.jpg", 120, 1.5, 23, 2
+"Honey Comb", "resources/cereal/honeycomb.jpg", 130, 1, 28, 2
+"Honey Nut Cheerios", "resources/cereal/honeynutcheerios.jpg", 110, 0, 22, 2
+"Honey Smacks", "resources/cereal/honeysmacks.jpg", 105, 0.5, 25, 2
+"Kix", "resources/cereal/kix.jpg", 110, 1, 25, 2
+"Life", "resources/cereal/life.jpg", 120, 2, 25, 3
+"Lucky Charms", "resources/cereal/luckycharms.jpg", 110, 1, 22, 2
+"Mini Wheats", "resources/cereal/miniwheats.jpg", 190, 1, 45, 9
+"Oatmeal Squares", "resources/cereal/oatmealsquares.jpg", 210, 2.5, 44, 6
+"Oh's", "resources/cereal/ohs.jpg", 110, 2, 23, 1
+"Pops", "resources/cereal/pops.jpg", 120, 0, 27, 1
+"Product 19", "resources/cereal/product19.jpg", 110, 0, 25, 3
+"Raisin Bran", "resources/cereal/raisinbran.jpg", 190, 1, 45, 4
+"Reese's Puffs", "resources/cereal/reesespuffs.jpg", 120, 3, 22, 2
+"Rice Chex", "resources/cereal/ricechex.jpg", 100, 0, 23, 2
+"Rice Krispies", "resources/cereal/ricekrispies.jpg", 130, 2, 17, 0
+"Rice Krispies Treats", "resources/cereal/ricekrispiestreats.jpg", 164, 3, 33, 1
+"Smorz", "resources/cereal/smorz.jpg", 130, 2, 26, 2
+"Special K", "resources/cereal/specialk.jpg", 120, 1, 19, 10
+"Trix", "resources/cereal/trix.jpg", 120, 1.5, 27, 1
+"Waffle Crisp", "resources/cereal/wafflecrisp.jpg", 120, 1.5, 25, 2
+"Wheaties", "resources/cereal/wheaties.jpg", 100, 0.5, 22, 2
