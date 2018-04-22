@@ -5,8 +5,6 @@ import back_end.*;
 import back_end.Container;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -24,7 +22,6 @@ import java.util.List;
 
 public class Settings extends BorderPane{
 	private Button settingToMain;
-	private RadioButton[] rb;
 	private Cereal selectedCereal;
 	private List<Cereal> cereals = Container.cereals;
 
@@ -121,7 +118,7 @@ public class Settings extends BorderPane{
 
 	public VBox organizeBy(){
 	    VBox vbox = new VBox();
-        rb = new RadioButton[4];
+        RadioButton[] rb = new RadioButton[4];
         ToggleGroup group = new ToggleGroup();
         rb[0] = new RadioButton("Alphabetical");
         rb[1] = new RadioButton("Most Calories");
@@ -196,10 +193,5 @@ public class Settings extends BorderPane{
     public int hello(){
 	    return 5;
     }
-
-    public RadioButton[] getRadioButtons() {
-		return rb;
-	}
-
 	
 }
