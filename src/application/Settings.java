@@ -3,6 +3,8 @@ package application;
 import back_end.*;
 
 import back_end.Container;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -17,10 +19,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.util.List;
+
 
 public class Settings extends BorderPane{
 	private Button settingToMain;
+	private RadioButton[] rb;
 	private Cereal selectedCereal;
+	private List<Cereal> cereals = Container.cereals;
 
 	//Constructor
 	public Settings() {
@@ -71,12 +77,12 @@ public class Settings extends BorderPane{
 				btn.setId(Integer.toString(counter));
                 btn.setOnAction(event -> {
                     int cerealId = Integer.parseInt(btn.getId());
-                    this.selectedCereal = Container.cereals.get(cerealId);
+                    this.selectedCereal = cereals.get(cerealId);
                     setRight(cerealSelect());
                     //TESTER
                     //System.out.println(Container.cereals.get(cerealId).getName());
                 });
-				Image img = new Image(Container.cereals.get(counter).getImage());
+				Image img = new Image(cereals.get(counter).getImage());
 				ImageView imgV = new ImageView(img);
                 imgV.setFitHeight(140);
                 imgV.setFitWidth(98);
@@ -115,19 +121,46 @@ public class Settings extends BorderPane{
 
 	public VBox organizeBy(){
 	    VBox vbox = new VBox();
-        RadioButton[] rb = new RadioButton[4];
+        rb = new RadioButton[4];
         ToggleGroup group = new ToggleGroup();
         rb[0] = new RadioButton("Alphabetical");
         rb[1] = new RadioButton("Most Calories");
         rb[2] = new RadioButton("Most Fat");
         rb[3] = new RadioButton("Most Carbs");
-        for(int i = 0; i < rb.length; i++ ){
+
+        rb[0].setUserData("alphabetical");
+		rb[1].setUserData("calories");
+		rb[2].setUserData("fat");
+		rb[3].setUserData("carbs");
+
+
+
+		for(int i = 0; i < rb.length; i++ ){
             if(i == 0){
                 rb[i].setSelected(true);
             }
             rb[i].setToggleGroup(group);
             vbox.getChildren().add(rb[i]);
         }
+
+
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+			public void changed(ObservableValue<? extends Toggle> ov,
+								Toggle old_toggle, Toggle new_toggle) {
+				if (group.getSelectedToggle() != null) {
+					final CerealListSorter cls =
+							new CerealListSorter(group.getSelectedToggle().getUserData().toString());
+
+					cereals = cls.cereals;
+					setCenter(scroll(gridOfCereal()));
+
+				}
+
+
+			}
+		});
+
+
 	    return vbox;
     }
 
@@ -163,6 +196,10 @@ public class Settings extends BorderPane{
     public int hello(){
 	    return 5;
     }
+
+    public RadioButton[] getRadioButtons() {
+		return rb;
+	}
 
 	
 }

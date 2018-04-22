@@ -16,6 +16,7 @@ public class Container {
 	} 
 
 	public Cereal getCereal(int index) {
+
 		return cereals.get(index);
 	}
 

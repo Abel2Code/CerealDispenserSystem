@@ -11,8 +11,6 @@ import javafx.scene.layout.VBox;
 public class CerealPortions extends BorderPane {
     private Button backButton;
 
-
-
     public CerealPortions() {
         Image img = new Image("wallpapers/woodWallpaper.jpg");
         ImageView view = new ImageView(img);
