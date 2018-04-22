@@ -1,0 +1,40 @@
+Alpha Bits,cereal/alphabits.jpg, 120, 1.5, 24, 3
+Apple Jacks,cereal/applejack.jpg, 110, 1, 25, 1
+Cheerios,cereal/cheerios.jpg, 70, 1, 14, 2
+Cinnamon Toast Crunch,cereal/cinnamontoastcrunch.jpg, 130, 3, 25, 1
+Cocoa Krispies,cereal/cocoakrispies.jpg, 120, 1, 27, 1
+Cocoa Pebbles,cereal/cocoapebbles.jpg, 120, 1, 25, 1
+Cookie Crisp,cereal/cookiecrisp.jpg, 100, 1, 22, 1
+Corn Flakes,cereal/cornflakes.jpg, 100, 0, 25, 2
+Count Chocula,cereal/countchocula.jpg, 110, 1.5, 23, 1
+Cracklin Oat Bran,cereal/cracklin.jpg, 200, 7, 34, 4
+Crispix,cereal/crispix.jpg, 110, 0, 25, 2
+Crunch Berries,cereal/crunchberries.jpg, 150, 1.5, 22, 1
+Froot Loops,cereal/frootloops.jpg, 110, 1, 25, 1
+Frosted Flakes,cereal/frostedflakes.jpg, 110, 1, 25, 2
+Fruity Pebbles,cereal/fruitypebbles.jpg, 110, 1, 23, 1
+Golden Crisp,cereal/goldencrisp.jpg, 120, 0, 24, 1
+Golden Grahams,cereal/goldengrahams.jpg, 120, 1, 27, 2
+Go Lean Crunch,cereal/goleancrunch.jpg, 160, 0, 0, 6
+Honey Bunches Of Oats,cereal/honeybunchesofoats.jpg, 120, 1.5, 23, 2
+Honey Comb,cereal/honeycomb.jpg, 130, 1, 28, 2
+Honey Nut Cheerios,cereal/honeynutcheerios.jpg, 110, 0, 22, 2
+Honey Smacks,cereal/honeysmacks.jpg, 105, 0.5, 25, 2
+Kix,cereal/kix.jpg, 110, 1, 25, 2
+Life,cereal/life.jpg, 120, 2, 25, 3
+Lucky Charms,cereal/luckycharms.jpg, 110, 1, 22, 2
+Mini Wheats,cereal/miniwheats.jpg, 190, 1, 45, 9
+Oatmeal Squares,cereal/oatmealsquares.jpg, 210, 2.5, 44, 6
+Oh's,cereal/ohs.jpg, 110, 2, 23, 1
+Pops,cereal/pops.jpg, 120, 0, 27, 1
+Product 19,cereal/product19.jpg, 110, 0, 25, 3
+Raisin Bran,cereal/raisinbran.jpg, 190, 1, 45, 4
+Reese's Puffs,cereal/reesespuffs.jpg, 120, 3, 22, 2
+Rice Chex,cereal/ricechex.jpg, 100, 0, 23, 2
+Rice Krispies,cereal/ricecrispies.jpg, 130, 2, 17, 0
+Rice Krispies Treats,cereal/ricekrispiestreats.jpg, 164, 3, 33, 1
+Smorz,cereal/smorz.jpg, 130, 2, 26, 2
+Special K,cereal/specialk.jpg, 120, 1, 19, 10
+Trix,cereal/trix.jpg, 120, 1.5, 27, 1
+Waffle Crisp,cereal/wafflecrisp.jpg, 120, 1.5, 25, 2
+Wheaties,cereal/wheaties.jpg, 100, 0.5, 22, 2
