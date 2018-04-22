@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Container {
-	public static List<Cereal> cereals;
+	public static List<Cereal> cereals = new ArrayList<Cereal>();
 	public static List<Milk> milks;
 	public static List<Cereal> cerealContainer;
 	public static List<Milk> milkContainer;
@@ -11,6 +11,7 @@ public class Container {
 	private final int MILK_DEFAULT_SIZE = 2;
 
 	public Container() {
+
 		cereals = new ArrayList<Cereal>();
 	} 
 

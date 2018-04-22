@@ -1,22 +1,63 @@
 package application;
 
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
-public class StartUpScreen extends StackPane {
+public class StartUpScreen extends StackPane{
+    private Label time;
 
-    public StartUpScreen() {
-        Image image = new Image("resources/wallpapers/cerealWallpaper.jpg");
-        ImageView view = new ImageView(image);
-        Text touchBegin = new Text("Touch to Begin");
-        touchBegin.setId("touchToBegin");
-        getChildren().addAll(view, touchBegin);
+	public StartUpScreen() {
+		Image image = new Image("wallpapers/cerealWallpaper.jpg");
+		ImageView view = new ImageView(image);
+		Label label = new Label();
+		startTime();
+		label.setGraphic(view);
+		label.setMinWidth(800.0);
+		label.setMinHeight(480.0);
+	    time.setId("touchToBegin");
+	    Label touch = new Label("Touch to begin");
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(time, touch);
 
-        setAlignment(Pos.CENTER);
+        getChildren().addAll(label, vbox);
+	    
+	    vbox.setAlignment(Pos.CENTER);
+	    
+	    
+	}
+
+    private void startTime() {
+        time = new Label();
+
+        DateFormat tf = new SimpleDateFormat("HH:mm:ss");
+
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        new EventHandler<ActionEvent>() {
+                            @Override public void handle(ActionEvent actionEvent) {
+                                Calendar currentTime = Calendar.getInstance();
+                                time.setText(tf.format(currentTime.getTime()));
+                            }
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
 
     }
-
+	
 }

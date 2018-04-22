@@ -14,9 +14,10 @@ import javafx.scene.text.Text;
 
 public class MainMenu extends StackPane{
 	private Button settingMenu;
+	private Button[] cerealContainer;
 	
 	public MainMenu() {
-		Image img = new Image("resources/wallpapers/cerealWallpaper.jpg");
+		Image img = new Image("wallpapers/cerealWallpaper.jpg");
 		ImageView iv = new ImageView(img);
 		this.settingMenu = new Button("?");
 		settingMenu.setShape(new Circle(700.0));
@@ -29,7 +30,8 @@ public class MainMenu extends StackPane{
 			Button addFavorites = new Button("+");
 			//addFavorites.setMinSize(400.0, 700.0);
 			addFavorites.setId("addFavorites");
-			
+			this.cerealContainer = new Button[4];
+			this.cerealContainer[i] = addFavorites;
 			hbox.getChildren().add(addFavorites);
 			
 		}
@@ -44,6 +46,10 @@ public class MainMenu extends StackPane{
 
 	public Button getSettingMenu() {
 		return settingMenu;
+	}
+
+	public Button[] getCerealContainer(){
+		return cerealContainer;
 	}
 	
 	
