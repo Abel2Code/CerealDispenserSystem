@@ -3,8 +3,6 @@ package application;
 import back_end.*;
 
 import back_end.Container;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -17,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,7 +30,7 @@ public class Settings extends BorderPane{
 		Image img = new Image("wallpapers/woodWallpaper.jpg");
 		ImageView iv = new ImageView(img);
 		getChildren().addAll(iv,topPane());
-		setCenter(scroll(gridOfCereal()));
+		setCenter(scroll(gridOfCereal(cereals)));
 		VBox sortBy = organizeBy();
 		VBox title = title();
 		VBox selection = cerealSelect();
@@ -62,14 +61,24 @@ public class Settings extends BorderPane{
 		return sp;
 	}
 
-	public GridPane gridOfCereal(){
+	public GridPane gridOfCereal(List<Cereal> cereals){
+
 		int counter = 0;
 		GridPane gp = new GridPane();
 
 		gp.setHgap(10.0);
 		gp.setVgap(10.0);
-		for(int i = 0; i < 10; i++) {
-			for (int j = 0; j < 4; j++) {
+
+		int x = cereals.size();
+		int y = 1;
+
+		if (x > 4) {
+            y = (int) Math.ceil(x / 4.0);
+		    x = 4;
+        }
+
+		for(int i = 0; i < y; i++) {
+			for (int j = 0; j < x; j++) {
 				Button btn = new Button();
 				btn.setId(Integer.toString(counter));
                 btn.setOnAction(event -> {
@@ -92,6 +101,8 @@ public class Settings extends BorderPane{
 		}
 		return gp;
 	}
+
+
 	
 	public HBox topPane() {
 		HBox title = new HBox();
@@ -141,22 +152,31 @@ public class Settings extends BorderPane{
         }
 
 
-        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-			public void changed(ObservableValue<? extends Toggle> ov,
-								Toggle old_toggle, Toggle new_toggle) {
-				if (group.getSelectedToggle() != null) {
-					final CerealListSorter cls =
-							new CerealListSorter(group.getSelectedToggle().getUserData().toString());
+        group.selectedToggleProperty().addListener((ov, old_toggle, new_toggle) -> {
+            if (group.getSelectedToggle() != null) {
+                final CerealListSorter cls =
+                        new CerealListSorter(group.getSelectedToggle().getUserData().toString());
 
-					cereals = cls.cereals;
-					setCenter(scroll(gridOfCereal()));
+                cereals = cls.cereals;
+                setCenter(scroll(gridOfCereal(cereals)));
 
-				}
+            }
 
 
-			}
-		});
+        });
 
+
+		TextField search = new TextField("ex: Cheerios");
+		search.setMaxWidth(100);
+		search.setOnAction(e -> findCereal(search.getText()));
+		Button searchButton = new Button("Search");
+		searchButton.setOnAction(e -> findCereal(search.getText()));
+
+		VBox searchVB = new VBox();
+		Label emptySpace = new Label("");
+		searchVB.getChildren().addAll(emptySpace, search, searchButton);
+
+		vbox.getChildren().add(searchVB);
 
 	    return vbox;
     }
@@ -193,5 +213,43 @@ public class Settings extends BorderPane{
     public int hello(){
 	    return 5;
     }
-	
+
+    public Button getSettingToMain() {
+		return settingToMain;
+	}
+
+	private void findCereal(String cerealName) {
+	    List<Cereal> matches = new ArrayList<>();
+
+	    for(Cereal c : cereals) {
+	        if (cerealName.toLowerCase().equals(c.getName().toLowerCase())) {
+	            this.selectedCereal = c;
+	            matches.add(c);
+            } else {
+	            Cereal tmp = searchHelper(cerealName, c);
+
+	            if (tmp != null) {
+	                matches.add(tmp);
+                }
+            }
+        }
+
+        if (!matches.isEmpty()) {
+	        setCenter(scroll(gridOfCereal(matches)));
+        }
+    }
+
+    private Cereal searchHelper(String name, Cereal c) {
+        String[] arr = c.getName().split(" ");
+
+        for (String s : arr) {
+            if (name.toLowerCase().equals(s.toLowerCase())) {
+                return c;
+            }
+        }
+
+        return null;
+    }
+
+
 }

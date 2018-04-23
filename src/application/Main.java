@@ -33,6 +33,8 @@ public class Main extends Application {
 
 			start.setOnMouseClicked(e -> mainScene.setRoot(mainMenu));
 			mainMenu.getSettingMenu().setOnAction(e -> mainScene.setRoot(settingMenu));
+			settingMenu.getSettingToMain().setOnAction(e -> mainScene.setRoot(mainMenu));
+			cerealPortions.getBackButton().setOnAction(e -> mainScene.setRoot(mainMenu));
 			
 			primaryStage.setScene(mainScene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);

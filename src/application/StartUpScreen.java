@@ -27,7 +27,7 @@ public class StartUpScreen extends StackPane{
 		label.setGraphic(view);
 		label.setMinWidth(800.0);
 		label.setMinHeight(480.0);
-	    time.setId("touchToBegin");
+	    this.time.setId("touchToBegin");
 	    Label touch = new Label("Touch to begin");
         VBox vbox = new VBox();
         vbox.getChildren().addAll(time, touch);
@@ -46,11 +46,9 @@ public class StartUpScreen extends StackPane{
 
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0),
-                        new EventHandler<ActionEvent>() {
-                            @Override public void handle(ActionEvent actionEvent) {
-                                Calendar currentTime = Calendar.getInstance();
-                                time.setText(tf.format(currentTime.getTime()));
-                            }
+                        actionEvent -> {
+                            Calendar currentTime = Calendar.getInstance();
+                            time.setText(tf.format(currentTime.getTime()));
                         }
                 ),
                 new KeyFrame(Duration.seconds(1))
