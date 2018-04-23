@@ -10,3 +10,11 @@
 	-fx-font-size: 60px;
 	-fx-font-weight: bold;
 }
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}

@@ -11,9 +11,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,17 +44,9 @@ public class Settings extends BorderPane{
 	
 	public ScrollPane scroll(GridPane gp) {
 		ScrollPane sp = new ScrollPane();
-		StackPane stack = new StackPane();
-		Rectangle background = new Rectangle();
-		Image img = new Image("wallpapers/loopsWallpaper.jpg");
-		ImageView imgV = new ImageView(img);
-		background.setFill(Color.BLACK);
-		background.setHeight(1650);
-		background.setWidth(500);
-		stack.getChildren().addAll(background, gp);
 		sp.setFitToWidth(true);
 		sp.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-		sp.setContent(stack);
+		sp.setContent(gp);
 
 		return sp;
 	}
@@ -166,7 +156,8 @@ public class Settings extends BorderPane{
         });
 
 
-		TextField search = new TextField("ex: Cheerios");
+		TextField search = new TextField();
+		search.setPromptText("By Name");
 		search.setMaxWidth(100);
 		search.setOnAction(e -> findCereal(search.getText()));
 		Button searchButton = new Button("Search");
@@ -199,6 +190,8 @@ public class Settings extends BorderPane{
 	    Label picOfCereal = new Label();
 	    picOfCereal.setGraphic(imgV);
 	    Label name = new Label("Cereal Name: " + selectedCereal.getName());
+	    name.setMaxWidth(200);
+        name.setTextOverrun(OverrunStyle.ELLIPSIS);
 	    Label calories = new Label("Calorie(s): " + selectedCereal.getCalories() + " (cal)");
 	    Label fat = new Label("Fat(s): " + selectedCereal.getFat() + " (g)");
 	    Label carbs = new Label("Carb(s): " + selectedCereal.getCarbs() + " (g)");
