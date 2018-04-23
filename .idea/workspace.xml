@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1660723c-dc84-4c68-997c-c47a3549314c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/StartUpScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/StartUpScreen.java" afterDir="false" />
-    </list>
+    <list default="true" id="1660723c-dc84-4c68-997c-c47a3549314c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/application/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="383">
-              <caret line="245" column="57" selection-start-line="245" selection-start-column="57" selection-end-line="245" selection-end-column="57" />
+              <caret line="245" column="61" lean-forward="true" selection-start-line="245" selection-start-column="61" selection-end-line="245" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5931#5932#0" expanded="true" />
@@ -154,17 +149,6 @@
             <path>
               <item name="CerealDispenserSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="CerealDispenserSystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CerealDispenserSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CerealDispenserSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CerealDispenserSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CerealDispenserSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="dataBase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CerealDispenserSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -282,7 +266,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -292,12 +275,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32900944" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32900944" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24930556" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24930556" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -541,7 +524,7 @@
     <entry file="file://$PROJECT_DIR$/src/application/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
-          <caret line="245" column="57" selection-start-line="245" selection-start-column="57" selection-end-line="245" selection-end-column="57" />
+          <caret line="245" column="61" lean-forward="true" selection-start-line="245" selection-start-column="61" selection-end-line="245" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5931#5932#0" expanded="true" />
