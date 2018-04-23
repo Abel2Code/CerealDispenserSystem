@@ -8,10 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Circle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class Settings extends BorderPane{
 	    this.selectedCereal = Container.cereals.get(0);
 		Image img = new Image("wallpapers/woodWallpaper.jpg");
 		ImageView iv = new ImageView(img);
-		getChildren().addAll(iv,topPane());
+		getChildren().addAll(iv);
 		setCenter(scroll(gridOfCereal(cereals)));
 		VBox sortBy = organizeBy();
 		VBox title = title();
@@ -93,7 +93,7 @@ public class Settings extends BorderPane{
 	}
 
 
-	
+	/*
 	public HBox topPane() {
 		HBox title = new HBox();
 		this.settingToMain = new Button("<");
@@ -104,6 +104,7 @@ public class Settings extends BorderPane{
 		title.getChildren().addAll(this.settingToMain, settingTitle);
 		return title;
 	}
+	*/
 	
 	/**
 	 * 
@@ -119,17 +120,19 @@ public class Settings extends BorderPane{
 
 	public VBox organizeBy(){
 	    VBox vbox = new VBox();
-        RadioButton[] rb = new RadioButton[4];
+        RadioButton[] rb = new RadioButton[5];
         ToggleGroup group = new ToggleGroup();
         rb[0] = new RadioButton("Alphabetical");
         rb[1] = new RadioButton("Most Calories");
         rb[2] = new RadioButton("Most Fat");
         rb[3] = new RadioButton("Most Carbs");
+        rb[4] = new RadioButton("Most Protein");
 
         rb[0].setUserData("alphabetical");
 		rb[1].setUserData("calories");
 		rb[2].setUserData("fat");
 		rb[3].setUserData("carbs");
+		rb[4].setUserData("protein");
 
 
 
@@ -176,9 +179,9 @@ public class Settings extends BorderPane{
 	    VBox vbox = new VBox();
 	    HBox hbox = new HBox();
 	    Label title = new Label("Cereals");
-	    Button back = new Button("Back");
+	    this.settingToMain = new Button("Back");
 	    Label description = new Label("Please Select A Cereal:");
-	    hbox.getChildren().addAll(back, title);
+	    hbox.getChildren().addAll(settingToMain, title);
 	    vbox.getChildren().addAll(hbox, description);
 	    return vbox;
     }
@@ -197,9 +200,16 @@ public class Settings extends BorderPane{
 	    Label carbs = new Label("Carb(s): " + selectedCereal.getCarbs() + " (g)");
 	    Label protein = new Label("Protein: " + selectedCereal.getProtein() + " (g)");
 	    Button select = new Button("SELECT");
+
+	    VBox infoBox = new VBox();
+	    infoBox.setId("infoBox");
+	    infoBox.getChildren().addAll(name, calories, fat, carbs, protein);
+
 	    select.setMinWidth(200);
-	    vbox.getChildren().addAll(picOfCereal, name, calories, fat, carbs, protein, select);
+	    vbox.getChildren().addAll(picOfCereal, infoBox, select);
+	    vbox.setAlignment(Pos.TOP_CENTER);
         setRight(vbox);
+
         return vbox;
     }
 
