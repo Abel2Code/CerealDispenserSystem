@@ -12,8 +12,8 @@ public class Container {
 
 	public Container() {
 
-		cerealContainer = new Cereal[4];
-		milkContainer = new Milk[2];
+		cerealContainer = new Cereal[CEREAL_DEFAULT_SIZE];
+		milkContainer = new Milk[MILK_DEFAULT_SIZE];
 		for(int i = 0; i < cerealContainer.length; i++){
 			if(i <= 1){
 				milkContainer[i] = null;

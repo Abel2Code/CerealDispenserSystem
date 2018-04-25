@@ -14,10 +14,11 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 public class StartUpScreen extends StackPane{
-    private Label time;
+    private Text time;
 
 	public StartUpScreen() {
 		Image image = new Image("wallpapers/cerealWallpaper.jpg");
@@ -27,7 +28,8 @@ public class StartUpScreen extends StackPane{
 		label.setGraphic(view);
 		label.setMinWidth(800.0);
 		label.setMinHeight(480.0);
-	    this.time.setId("touchToBegin");
+
+	    time.setId("touchToBegin");
 	    Label touch = new Label("Touch to begin");
         VBox vbox = new VBox();
         vbox.getChildren().addAll(time, touch);
@@ -40,7 +42,7 @@ public class StartUpScreen extends StackPane{
 	}
 
     private void startTime() {
-        time = new Label();
+        time = new Text();
 
         DateFormat tf = new SimpleDateFormat("HH:mm:ss");
 

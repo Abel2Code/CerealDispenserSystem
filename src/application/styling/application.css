@@ -1,7 +1,6 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
-#favorites {
-    -fx-border-color: rgb(18, 148, 255);
+.favorites {
     -fx-border-radius: 30.0;
     -fx-border-width: 4.0;
     -fx-background-color: Transparent;
@@ -11,6 +10,26 @@
     -fx-max-width: 175.0;
     -fx-max-height: 300.0;
 }
+
+#container0 {
+    -fx-border-color: rgb(56, 165, 237);
+}
+
+#container1 {
+    -fx-border-color: rgb(239, 9, 162);
+}
+
+#container2 {
+    -fx-border-color: rgb(198, 98, 229);
+}
+
+#container3 {
+    -fx-border-color: rgb(157, 242, 142);
+}
+
+
+
+
 
 #button {
     -fx-background-color: Transparent;
@@ -42,10 +61,10 @@
     -fx-background-color: Transparent;
     -fx-font-family: Helvetica;
     -fx-font-weight: Bold;
-    -fx-font-size: 60.0;
+    -fx-font-size: 50.0;
     -fx-text-fill: white;
-    -fx-min-width: 700.0;
-    -fx-min-height: 150.0;
+    -fx-min-width: 500.0;
+    -fx-min-height: 120.0;
 }
 
 #selectButton {
@@ -57,6 +76,19 @@
     -fx-font-weight: Bold;
     -fx-font-size: 15.0;
 }
+
+#portionButton {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 20.0;
+    -fx-min-width: 500.0;
+    -fx-min-height: 100.0;
+}
+
 
 #back {
     -fx-background-color: Transparent;
