@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Container {
 	public static List<Cereal> cereals = new ArrayList<Cereal>();
-	public static List<Milk> milks;
+	public static List<Milk> milks = new ArrayList<Milk>();
 	public static  Cereal[] cerealContainer;
 	public static Milk[] milkContainer;
 	private final int CEREAL_DEFAULT_SIZE = 4;

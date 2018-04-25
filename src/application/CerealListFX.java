@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -56,9 +57,9 @@ public class CerealListFx extends BorderPane{
 		ScrollPane sp = new ScrollPane();
 		StackPane stack = new StackPane();
 		Rectangle background = new Rectangle();
-		Image img = new Image("wallpapers/loopsWallpaper.jpg");
-		ImageView imgV = new ImageView(img);
-		background.setFill(Color.BLACK);
+		Image img = new Image("wallpapers/woodWallpaper.jpg");
+
+		background.setFill(new ImagePattern(img));
 		background.setHeight(1650);
 		background.setWidth(500);
 		stack.getChildren().addAll(background, gp);
@@ -166,7 +167,7 @@ public class CerealListFx extends BorderPane{
         selectButton.setMinSize(10,10);
         selectButton.setStyle("-fx-background-color: Transparent; -fx-border-color: Black; -fx-border-width: 2.0; -fx-border-radius: 30.0;");
         selectButton.setFont(Font.font("Helvetica", FontWeight.BOLD, 15.0));
-	    selectButton.setMinWidth(200);
+	    selectButton.setMinWidth(190);
 
 	    displayChosenCereal.setPadding(new Insets(0,10.0,0,10.0));
 	    displayChosenCereal.getChildren().addAll(picOfCereal, name, calories, fat, carbs, protein, selectButton);

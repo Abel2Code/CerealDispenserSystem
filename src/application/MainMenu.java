@@ -98,6 +98,7 @@ public class MainMenu extends BorderPane{
 
 		for(int i = 0; i < 4; i++) {
 			Button addFavorites = new Button();
+			addFavorites.setMinSize(175.0, 300.0);
 			if(Container.cerealContainer[i] != null){
 				ImageView img = new ImageView(new Image(Container.cerealContainer[i].getImage()));
 
@@ -112,7 +113,6 @@ public class MainMenu extends BorderPane{
 			addCSS += "-fx-background-color: Transparent;";
 			addCSS += "-fx-background-size: Cover";
 			addFavorites.setStyle(addCSS);
-			addFavorites.setMinSize(175.0, 300.0);
 			this.cerealContainer = new Button[4];
 			this.cerealContainer[i] = addFavorites;
     		hbox.getChildren().add(addFavorites);

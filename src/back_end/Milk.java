@@ -34,4 +34,24 @@ public class Milk {
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public double getCalories() {
+		return calories;
+	}
+
+	public double getFat() {
+		return fat;
+	}
+
+	public double getCarbs() {
+		return carbs;
+	}
+
+	public double getProtein() {
+		return protein;
+	}
 }

@@ -67,4 +67,6 @@ public class AddFX extends BorderPane {
     public Button getAddCereal() {
         return addCereal;
     }
+
+    public Button getAddMilk(){ return addMilk; }
 }
