@@ -6,13 +6,12 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -26,13 +25,9 @@ public class MainMenu extends BorderPane {
 	public MainMenu() {
 			Image img = new Image("wallpapers/woodWallpaper.jpg");
 			ImageView iv = new ImageView(img);
-			this.settingMenu = new Button("?");
-			settingMenu.setShape(new Circle(700.0));
-			settingMenu.setId("setting");
 
-			getChildren().addAll(settingMenu, iv);
-//
-//			hbox.setPadding(new Insets(200, 80, 0, 80));
+			getChildren().add(iv);
+
 			top();
 			container();
 			menu();
@@ -42,29 +37,19 @@ public class MainMenu extends BorderPane {
 			HBox hbox = new HBox();
 
 			add = new Button("Add");
-			buttonMinSize(add);
-			add.setStyle("-fx-background-color: Transparent; -fx-border-color: Green; -fx-border-width: 2.0; -fx-border-radius: 30.0;");
-			add.setFont(Font.font("Helvetica", FontWeight.BOLD, 18.0));
+			add.setId("add");
 
 			Button remove = new Button("Remove");
-			remove.setStyle("-fx-background-color: Transparent; -fx-border-color: red; -fx-border-width: 2.0; -fx-border-radius: 30.0;");
-			buttonMinSize(remove);
-			remove.setFont(Font.font("Helvetica", FontWeight.BOLD, 18.0));
+			remove.setId("remove");
 
 			Button orderHistory = new Button("Order History");
-			orderHistory.setStyle("-fx-background-color: Transparent; -fx-border-color: black; -fx-border-width: 2.0; -fx-border-radius: 30.0;");
-			buttonMinSize(orderHistory);
-			orderHistory.setFont(Font.font("Helvetica", FontWeight.BOLD, 18.0));
+			orderHistory.setId("button");
 
 			Button storageContainer = new Button("Storage View");
-			storageContainer.setStyle("-fx-background-color: Transparent; -fx-border-color: black; -fx-border-width: 2.0; -fx-border-radius: 30.0;");
-			buttonMinSize(storageContainer);
-			storageContainer.setFont(Font.font("Helvetica", FontWeight.BOLD, 18.0));
+			storageContainer.setId("button");
 
 			Button refill = new Button("Replenish Storage");
-			refill.setStyle("-fx-background-color: Transparent; -fx-border-color: black; -fx-border-width: 2.0; -fx-border-radius: 30.0;");
-			buttonMinSize(refill);
-			refill.setFont(Font.font("Helvetica", FontWeight.BOLD, 18.0));
+			refill.setId("button");
 
 			hbox.setPadding(new Insets(18.0,0,10.0,14.0));
 			hbox.setSpacing(15.0);
@@ -72,21 +57,20 @@ public class MainMenu extends BorderPane {
 
 			setBottom(hbox);
 		}
+
 		public void top(){
 			HBox hbox = new HBox();
 			toStartScreen = new Button("[Back]");
-			toStartScreen.setTextFill(Color.RED);
-			toStartScreen.setMinSize(80.0, 50.0);
-			toStartScreen.setStyle("-fx-background-color: Transparent");
-			Text label = new Text("Cereal Dispenser System");
-			label.setFill(Color.valueOf("#1294FF"));
-			label.setFont(Font.font("Helvetica", FontWeight.BOLD, 43.0));
-			Button notifications = new Button("!");
-			notifications.setStyle("-fx-background-color: Transparent");
-			notifications.setFont(Font.font("Helvetica", FontWeight.BOLD, 30.0));
-			notifications.setMinSize(80.0, 50.0);
+			toStartScreen.setId("back");
 
-			hbox.setSpacing(80.0);
+			Text label = new Text("Cereal Dispenser System");
+			label.setId("title");
+
+			Button notifications = new Button("!");
+			notifications.setId("notifications");
+
+			hbox.setSpacing(50.0);
+			hbox.setPadding(new Insets(30.0, 0, 0,0));
 
 			hbox.getChildren().addAll(toStartScreen, label, notifications);
 			setTop(hbox);
@@ -97,21 +81,20 @@ public class MainMenu extends BorderPane {
 
 			for(int i = 0; i < 4; i++) {
 				Button addFavorites = new Button();
-				if(Container.cerealContainer[i] != null){
-					ImageView img = new ImageView(new Image(Container.cerealContainer[i].getImage()));
+				addFavorites.setId("favorites");
 
-					addFavorites.setGraphic(img);
+				if(Container.cerealContainer[i] != null){
+					Image img = new Image(Container.cerealContainer[i].getImage());
+					ImageView iv = new ImageView(img);
+					iv.setFitWidth(addFavorites.getWidth() - 100);
+					iv.setFitHeight(addFavorites.getHeight());
+
+					addFavorites.setGraphic(iv);
 				}
 				else{
 					addFavorites.setText("Empty");
 				}
-				String addCSS = "-fx-border-color: #1294FF;";
-				addCSS += "-fx-border-radius: 30.0;";
-				addCSS += "-fx-border-width: 4.0;";
-				addCSS += "-fx-background-color: Transparent;";
-				addCSS += "-fx-background-size: Cover";
-				addFavorites.setStyle(addCSS);
-				addFavorites.setMinSize(175.0, 300.0);
+
 				this.cerealContainer = new Button[4];
 				this.cerealContainer[i] = addFavorites;
 				hbox.getChildren().add(addFavorites);
@@ -122,10 +105,6 @@ public class MainMenu extends BorderPane {
 			setCenter(hbox);
 
 
-		}
-
-		public Button getSettingMenu() {
-			return settingMenu;
 		}
 
 		public Button[] getCerealContainer(){

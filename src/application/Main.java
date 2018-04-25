@@ -1,16 +1,10 @@
 package application;
 
-import back_end.*;
-
+import back_end.Container;
+import back_end.DataReader;
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
@@ -26,12 +20,12 @@ public class Main extends Application {
 			AddFX addFX = new AddFX();
 			CerealListFx cerealList = new CerealListFx();
 			CerealPortions cerealPortions = new CerealPortions();
-			
+			PourFx pourFx = new PourFx();
+
+
 
 			Scene mainScene = new Scene(start, 800,480);
-			mainScene.getStylesheets().add(start.getClass().getResource("styling/StartUpScreen.css").toExternalForm());
-			mainScene.getStylesheets().add(mainMenu.getClass().getResource("styling/MainMenu.css").toExternalForm());
-			mainScene.getStylesheets().add(cerealList.getClass().getResource("styling/Settings.css").toExternalForm());
+			mainScene.getStylesheets().add(getClass().getResource("styling/application.css").toExternalForm());
 
 			start.setOnMouseClicked(e -> mainScene.setRoot(mainMenu));
 			mainMenu.getToStartScreen().setOnAction(e -> mainScene.setRoot(start));
