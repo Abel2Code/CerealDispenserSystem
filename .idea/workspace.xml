@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1660723c-dc84-4c68-997c-c47a3549314c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/dataBase/milkData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dataBase/milkData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/CerealPortions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/styling/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/styling/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/back_end/Cereal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/back_end/Cereal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/back_end/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/back_end/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/back_end/Milk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/back_end/Milk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/back_end/MilkContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/back_end/MilkContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/back_end/Serving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/back_end/Serving.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,15 +104,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/styling/application.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -131,10 +113,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MilkListFx.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MilkListFx.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/MilkListFx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2550">
+            <state relative-caret-position="-1128">
               <caret line="170" column="26" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,6 +125,15 @@
                 <element signature="e#6390#6391#0" expanded="true" />
                 <element signature="e#6419#6420#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -186,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/application/styling/Settings.css" />
         <option value="$PROJECT_DIR$/src/application/Settings.java" />
         <option value="$PROJECT_DIR$/src/application/styling/MainMenu.css" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/back_end/Order.java" />
         <option value="$PROJECT_DIR$/src/application/CerealPortions.java" />
         <option value="$PROJECT_DIR$/src/application/StartUpScreen.java" />
@@ -209,6 +199,7 @@
         <option value="$PROJECT_DIR$/src/application/Main.java" />
         <option value="$PROJECT_DIR$/src/application/CerealListFx.java" />
         <option value="$PROJECT_DIR$/src/application/MilkListFx.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -361,12 +352,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32900944" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32900944" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13194445" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13194445" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -617,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/javafx-src.zip!/javafx/application/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -863,7 +847,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/MilkListFx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
+        <state relative-caret-position="-1128">
           <caret line="170" column="26" selection-start-line="170" selection-start-column="26" selection-end-line="170" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -872,6 +856,13 @@
             <element signature="e#6390#6391#0" expanded="true" />
             <element signature="e#6419#6420#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
