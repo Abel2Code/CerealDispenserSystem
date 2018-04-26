@@ -138,11 +138,6 @@
     -fx-min-height: 50.0;
 }
 
-#infoBox {
-    -fx-background-color: white;
-    -fx-min-width: 200;
-}
-
 .scroll-pane > .viewport {
    -fx-background-color: transparent;
 }

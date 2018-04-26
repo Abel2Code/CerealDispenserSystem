@@ -63,14 +63,15 @@ public class MainMenu extends BorderPane {
 		toStartScreen = new Button("[Back]");
 		toStartScreen.setId("back");
 
-		Text label = new Text("Cereal Dispenser System");
+		Text label = new Text("Cereal Menu");
 		label.setId("title");
 
 		Button notifications = new Button("!");
 		notifications.setId("notifications");
 
-		hbox.setSpacing(50.0);
+		hbox.setSpacing(180.0);
 		hbox.setPadding(new Insets(30.0, 0, 0,0));
+
 
 		hbox.getChildren().addAll(toStartScreen, label, notifications);
 		setTop(hbox);
@@ -102,6 +103,8 @@ public class MainMenu extends BorderPane {
 			if(Container.cerealContainer[i] != null){
 				Image img = new Image(Container.cerealContainer[i].getImage());
 				ImageView iv = new ImageView(img);
+				iv.setFitHeight(250);
+				iv.setFitWidth(155);
 
 				buttonContainer[i].setGraphic(iv);
 				buttonContainer[i].setText(null);

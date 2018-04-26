@@ -18,11 +18,6 @@ public class Cereal {
 		this.carbs = carbs;
 		this.protein = protein;
 	}
-
-	public Cereal(String name) {
-		this.name = name;
-		this.capacity = DEFAULT;
-	}
 	
 	public String getName() {
 		return this.name;

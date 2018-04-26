@@ -1,16 +1,18 @@
 package back_end;
 public class Milk {
-	private String type;
+	private String name;
 	private String image;
 	private double calories;
 	private double fat;
 	private double carbs;
 	private double protein;
 	private int capacity;
+	private String expirationDate;
 	private final int DEFAULT = 100;
 
-	public Milk(String type, String img, double calories, double fat, double carbs, double protein){
-		this.type = type;
+
+	public Milk(String name, String img, double calories, double fat, double carbs, double protein){
+		this.name = name;
 		this.image = img;
 		this.calories = calories;
 		this.fat = fat;
@@ -18,13 +20,8 @@ public class Milk {
 		this.protein = protein;
 	}
 
-	public Milk(String type) {
-		this.type = type;
-		this.capacity = DEFAULT;
-	}
-
-	public String getType() {
-		return this.type;
+	public String getName() {
+		return this.name;
 	}
 
 	public int getCapacity() {
@@ -34,4 +31,29 @@ public class Milk {
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public double getCalories() {
+		return calories;
+	}
+
+	public double getFat() {
+		return fat;
+	}
+
+	public double getCarbs() {
+		return carbs;
+	}
+
+	public double getProtein() {
+		return protein;
+	}
+
+	public void setExpirationDate(String date) {
+		this.expirationDate = date;
+	}
+
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Container {
 	public static List<Cereal> cereals = new ArrayList<Cereal>();
-	public static List<Milk> milks;
+	public static List<Milk> milks = new ArrayList<Milk>();
 	public static Cereal[] cerealContainer;
 	public static Milk[] milkContainer;
 	private final int CEREAL_DEFAULT_SIZE = 4;
@@ -32,6 +32,15 @@ public class Container {
 		for(int i = 0; i < cerealContainer.length; i++){
 			if(cerealContainer[i] == null){
 				cerealContainer[i] = cereal;
+				break;
+			}
+		}
+	}
+
+	public static void addMilk(Milk milk) {
+		for(int i = 0; i < milkContainer.length; i++){
+			if(milkContainer[i] == null){
+				milkContainer[i] = milk;
 				break;
 			}
 		}

@@ -28,7 +28,7 @@ public class MilkContainer {
 		String output = "";
 
 		for (Milk m : milks) {
-			output += m.getType() + " ";
+			output += m.getName() + " ";
 		}
 
 		return output;
