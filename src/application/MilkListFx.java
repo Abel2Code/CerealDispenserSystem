@@ -20,8 +20,11 @@ public class MilkListFx extends BorderPane{
     private Button toMain;
     private Button selectButton;
     private VBox displayChosenMilk;
-    public static Milk selectedMilk;
+    private TextField expDate;
+    private Button addMilkButton = new Button("Set Expiration Date");
     private List<Milk> milks = Container.milks;
+    public static Milk selectedMilk;
+
 
     //Constructor
     public MilkListFx() {
@@ -207,14 +210,23 @@ public class MilkListFx extends BorderPane{
         return displayChosenMilk;
     }
 
+    public void setExpirationDate() {
+        Text txt = new Text("Enter Expiration Date");
+        txt.setId("text");
 
-    public Button getSelectButton() {
-        return selectButton;
+        expDate = new TextField();
+        expDate.setPromptText("form: MM/DD/YY");
+
+        addMilkButton.setId("selectButton");
+
+        VBox vbox = new VBox();
+        vbox.getChildren().addAll(txt, expDate, addMilkButton);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(10.0);
+
+        setCenter(vbox);
     }
 
-    public Button getToMain() {
-        return toMain;
-    }
 
     public void changeChosenMilkImage(){
         Image img = new Image(this.selectedMilk.getImage());
@@ -270,5 +282,25 @@ public class MilkListFx extends BorderPane{
 
         return null;
     }
+
+    public Button getSelectButton() {
+        return selectButton;
+    }
+
+    public Button getToMain() {
+        return toMain;
+    }
+
+    public Button getAddMilkButton() {
+        return addMilkButton;
+    }
+
+    public TextField getExpDate() {
+        return expDate;
+    }
+
+
+
+
 
 }

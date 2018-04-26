@@ -56,4 +56,6 @@ public class Milk {
 		this.expirationDate = date;
 	}
 
+	public String getExpirationDate() { return expirationDate; }
+
 }

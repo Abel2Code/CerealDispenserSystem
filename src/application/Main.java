@@ -40,6 +40,10 @@ public class Main extends Application {
 			cerealButtonController(milkMenu, mainScene, cerealButtons);
 			milkButtonController(portions, mainScene, milkButtons);
 			portionsController(mainMenu, mainScene, pourFx, portions);
+
+			pourFx.getPourButton().setOnAction(e -> {
+				System.out.println(new Order().toString());
+			});
 			
 			primaryStage.setScene(mainScene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -90,8 +94,12 @@ public class Main extends Application {
 	public void milkListFXController(MilkMenu milkMenu, Scene mainScene, MilkListFx milkList){
 		milkList.getToMain().setOnAction(e -> mainScene.setRoot(milkMenu));
 		milkList.getSelectButton().setOnAction(e -> {
+			milkList.setExpirationDate();
+		});
 
-			Container.addMilk(MilkListFx.selectedMilk);
+		milkList.getAddMilkButton().setOnAction(e -> {
+			Container.addMilk(MilkListFx.selectedMilk, milkList.getExpDate().getText());
+			milkList.setCenter(milkList.scroll(milkList.gridOfMilk(Container.milks)));
 			milkMenu.refreshFx();
 			mainScene.setRoot(milkMenu);
 

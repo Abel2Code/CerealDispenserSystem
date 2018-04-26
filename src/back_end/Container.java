@@ -37,7 +37,9 @@ public class Container {
 		}
 	}
 
-	public static void addMilk(Milk milk) {
+	public static void addMilk(Milk milk, String date) {
+		milk.setExpirationDate(date);
+
 		for(int i = 0; i < milkContainer.length; i++){
 			if(milkContainer[i] == null){
 				milkContainer[i] = milk;

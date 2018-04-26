@@ -38,5 +38,11 @@ public class Order {
 		setPortion(-1);
 	}
 
+	public String toString() {
+		return Container.cerealContainer[cerealIndex].getName() + " " + Container.milkContainer[milkIndex].getName() + " " + Container.milkContainer[milkIndex].getExpirationDate() + " " + portion;
+
+	}
+
+
 
 }
