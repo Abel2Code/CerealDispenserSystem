@@ -12,6 +12,7 @@ import javafx.scene.text.Text;
 public class MilkMenu extends BorderPane {
     private Button add;
     private Button toStartScreen;
+    private Button orderHistory;
     private Button[] buttonContainer = new Button[2];
 
     public MilkMenu() {
@@ -34,7 +35,7 @@ public class MilkMenu extends BorderPane {
         Button remove = new Button("Remove");
         remove.setId("remove");
 
-        Button orderHistory = new Button("Order History");
+        orderHistory = new Button("Order History");
         orderHistory.setId("button");
 
         Button storageContainer = new Button("Storage View");
@@ -114,6 +115,8 @@ public class MilkMenu extends BorderPane {
     public Button getAdd(){
         return add;
     }
+
+    public Button getOrderHistory() { return orderHistory; };
 
 
 

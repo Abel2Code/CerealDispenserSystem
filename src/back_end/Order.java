@@ -1,48 +1,41 @@
 package back_end;
 
 public class Order {
-	private static int cerealIndex = -1;
-	private static int milkIndex = -1;
-	private static int portion = -1;
+	private Cereal cereal;
+	private Milk milk;
+	private int portion;
 
-	public Order() {
+	public Order(Cereal cereal, Milk milk, int portion) {
+		this.cereal = cereal;
+		this.milk = milk;
+		this.portion = portion;
 	}
 
-	public static int getCerealIndex() {
-		return cerealIndex;
+	public Cereal getCereal() {
+		return cereal;
 	}
 
-	public static void setCerealIndex(int cerealIndex) {
-		Order.cerealIndex = cerealIndex;
+	public void setCereal(Cereal cereal) {
+		this.cereal = cereal;
 	}
 
-	public static int getMilkIndex() {
-		return milkIndex;
+	public Milk getMilk() {
+		return milk;
 	}
 
-	public static void setMilkIndex(int milkIndex) {
-		Order.milkIndex = milkIndex;
+	public void setMilk(Milk milk) {
+		this.milk = milk;
 	}
 
-	public static int getPortion() {
+	public int getPortion() {
 		return portion;
 	}
 
-	public static void setPortion(int portion) {
-		Order.portion = portion;
-	}
-
-	public static void clearOrder() {
-		setCerealIndex(-1);
-		setMilkIndex(-1);
-		setPortion(-1);
+	public void setPortion(int portion) {
+		this.portion = portion;
 	}
 
 	public String toString() {
-		return Container.cerealContainer[cerealIndex].getName() + " " + Container.milkContainer[milkIndex].getName() + " " + Container.milkContainer[milkIndex].getExpirationDate() + " " + portion;
-
+		return cereal.getName() + " with " + milk.getName() + " size: " + portion;
 	}
-
-
-
 }

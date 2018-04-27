@@ -6,14 +6,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 
-import javax.swing.*;
-
 public class PourFx extends StackPane {
-    Button pourButton;
+    private Button pourButton;
+    private Button backButton;
 
     public PourFx() {
         Image img = new Image("wallpapers/woodWallpaper.jpg");
         ImageView imgV = new ImageView(img);
+
+        backButton = new Button("[bakc]");
+        backButton.setId("back");
+        setAlignment(backButton, Pos.TOP_LEFT);
 
         pourButton = new Button("P O U R");
         pourButton.setId("pourButton");
@@ -26,5 +29,7 @@ public class PourFx extends StackPane {
     public Button getPourButton() {
         return pourButton;
     }
+
+    public Button getBackButton() { return backButton; }
 
 }

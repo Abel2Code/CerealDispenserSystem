@@ -1,8 +1,6 @@
 package application;
 
-import back_end.Container;
-import back_end.DataReader;
-import back_end.Order;
+import back_end.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,10 +19,13 @@ public class Main extends Application {
 			MainMenu mainMenu = new MainMenu();
 			MilkMenu milkMenu = new MilkMenu();
 			Container container = new Container();
+			OrderHistory orderHistory = new OrderHistory();
+			Choice choice = new Choice();
 			CerealListFx cerealList = new CerealListFx();
 			MilkListFx milkList = new MilkListFx();
 			Portions portions = new Portions();
 			PourFx pourFx = new PourFx();
+			OrderHistoryFx orderHistoryFx = new OrderHistoryFx();
 			Button[] cerealButtons = mainMenu.getButtonContainer();
 			Button[] milkButtons = milkMenu.getButtonContainer();
 
@@ -32,8 +33,8 @@ public class Main extends Application {
 			mainScene.getStylesheets().add(getClass().getResource("styling/application.css").toExternalForm());
 
 			startScreenController(mainMenu, mainScene, start);
-			mainMenuController(mainMenu,mainScene,start, cerealList);
-			milkMenuController(milkMenu, mainScene, mainMenu, milkList);
+			mainMenuController(mainMenu,mainScene,start, cerealList, orderHistoryFx);
+			milkMenuController(milkMenu, mainScene, mainMenu, milkList, orderHistoryFx);
 			//addFXController(mainMenu, mainScene, cerealList, milkList, addFX);
 			cerealListFXController(mainMenu, mainScene, cerealList);
 			milkListFXController(milkMenu, mainScene, milkList);
@@ -42,8 +43,21 @@ public class Main extends Application {
 			portionsController(mainMenu, mainScene, pourFx, portions);
 
 			pourFx.getPourButton().setOnAction(e -> {
-				System.out.println(new Order().toString());
+				OrderHistory.addOrder(Choice.cerealChoice, Choice.milkChoice, Choice.portionChoice);
+				System.out.println(orderHistory.toString());
+				orderHistoryFx.updateHistory();
+
+				Choice.clearChoice();
+				mainScene.setRoot(start);
+
+
 			});
+
+			pourFx.getBackButton().setOnAction(e -> {
+				mainScene.setRoot(portions);
+			});
+
+			orderHistoryFx.getBackButton().setOnAction(e -> mainScene.setRoot(mainMenu));
 			
 			primaryStage.setScene(mainScene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -59,14 +73,16 @@ public class Main extends Application {
 		
 	}
 
-	public void mainMenuController(MainMenu mainMenu, Scene mainScene, StartUpScreen start, CerealListFx cerealList){
+	public void mainMenuController(MainMenu mainMenu, Scene mainScene, StartUpScreen start, CerealListFx cerealList, OrderHistoryFx orderHistoryFx){
 		mainMenu.getToStartScreen().setOnAction(e -> mainScene.setRoot(start));
 		mainMenu.getAdd().setOnAction(e -> mainScene.setRoot(cerealList));
+		mainMenu.getOrderHistory().setOnAction(e -> mainScene.setRoot(orderHistoryFx));
 	}
 
-	public void milkMenuController(MilkMenu milkMenu, Scene mainScene, MainMenu mainMenu, MilkListFx milkList) {
+	public void milkMenuController(MilkMenu milkMenu, Scene mainScene, MainMenu mainMenu, MilkListFx milkList, OrderHistoryFx orderHistoryFx) {
 		milkMenu.getToStartScreen().setOnAction(e -> mainScene.setRoot(mainMenu));
 		milkMenu.getAdd().setOnAction(e -> mainScene.setRoot(milkList));
+		milkMenu.getOrderHistory().setOnAction(e -> mainScene.setRoot(orderHistoryFx));
 
 	}
 
@@ -113,17 +129,17 @@ public class Main extends Application {
 		Button[] portionButtons = portions.getPortionButtons();
 
 		portionButtons[0].setOnAction(e -> {
-			Order.setPortion(0);
+			Choice.setPortionChoice(0);
 			mainScene.setRoot(pourFx);
 		});
 
 		portionButtons[1].setOnAction(e -> {
-			Order.setPortion(1);
+			Choice.setPortionChoice(1);
 			mainScene.setRoot(pourFx);
 		});
 
 		portionButtons[2].setOnAction(e -> {
-			Order.setPortion(2);
+			Choice.setPortionChoice(2);
 			mainScene.setRoot(pourFx);
 		});
 
@@ -133,28 +149,28 @@ public class Main extends Application {
 	public void cerealButtonController(MilkMenu milkMenu, Scene mainScene, Button[] cerealButtons) {
 		cerealButtons[0].setOnAction(e -> {
 			if (Container.cerealContainer[0] != null) {
-				Order.setCerealIndex(0);
+				Choice.setCerealChoice(0);
 				mainScene.setRoot(milkMenu);
 			}
 		});
 
 		cerealButtons[1].setOnAction(e -> {
 			if (Container.cerealContainer[1] != null) {
-				Order.setCerealIndex(1);
+				Choice.setCerealChoice(1);
 				mainScene.setRoot(milkMenu);
 			}
 		});
 
 		cerealButtons[2].setOnAction(e -> {
 			if (Container.cerealContainer[2] != null) {
-				Order.setCerealIndex(2);
+				Choice.setCerealChoice(2);
 				mainScene.setRoot(milkMenu);
 			}
 		});
 
 		cerealButtons[3].setOnAction(e -> {
 			if (Container.cerealContainer[3] != null) {
-				Order.setCerealIndex(3);
+				Choice.setCerealChoice(3);
 				mainScene.setRoot(milkMenu);
 			}
 		});
@@ -164,14 +180,14 @@ public class Main extends Application {
 	public void milkButtonController(Portions portions, Scene mainScene, Button[] milkButons) {
 		milkButons[0].setOnAction(e -> {
 			if (Container.milkContainer[0] != null) {
-				Order.setMilkIndex(0);
+				Choice.setMilkChoice(0);
 				mainScene.setRoot(portions);
 			}
 		});
 
 		milkButons[1].setOnAction(e -> {
 			if (Container.milkContainer[1] != null) {
-				Order.setMilkIndex(1);
+				Choice.setMilkChoice(1);
 				mainScene.setRoot(portions);
 			}
 		});

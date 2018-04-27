@@ -20,6 +20,7 @@ public class MainMenu extends BorderPane {
 		private Button settingMenu;
 		private Button add;
 		private Button toStartScreen;
+		private Button orderHistory;
 		private Button[] buttonContainer = new Button[4];
 
 	public MainMenu() {
@@ -42,7 +43,7 @@ public class MainMenu extends BorderPane {
 		Button remove = new Button("Remove");
 		remove.setId("remove");
 
-		Button orderHistory = new Button("Order History");
+		orderHistory = new Button("Order History");
 		orderHistory.setId("button");
 
 		Button storageContainer = new Button("Storage View");
@@ -116,7 +117,6 @@ public class MainMenu extends BorderPane {
 		return buttonContainer;
 	}
 
-
 	public Button getToStartScreen(){
 		return toStartScreen;
 	}
@@ -124,6 +124,8 @@ public class MainMenu extends BorderPane {
 	public Button getAdd(){
 		return add;
 	}
+
+	public Button getOrderHistory() { return orderHistory; }
 
 
 
