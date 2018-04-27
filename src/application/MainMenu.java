@@ -17,7 +17,6 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class MainMenu extends BorderPane {
-		private Button settingMenu;
 		private Button add;
 		private Button toStartScreen;
 		private Button orderHistory;

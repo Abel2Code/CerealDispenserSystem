@@ -157,9 +157,9 @@
 
 #data {
     -fx-font-family: Helvetica;
-    -fx-font-size: 10.0;
-    -fx-mid-width: 200;
-    -fx-max-width: 200;
+    -fx-font-size: 15.0;
+    -fx-text-align: center;
+    -fx-max-width: 150;
 }
 
 .scroll-pane > .viewport {
