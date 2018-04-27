@@ -51,7 +51,7 @@ public class OrderHistoryFx extends BorderPane {
     public void history() {
         Text name = new Text("Cereal");
         Text milk = new Text("Milk");
-        Text milkExp = new Text("Expiration Date");
+        Text milkExp = new Text("Milk Expiration Date");
         Text portion = new Text("Size");
         Text button = new Text("Button");
 
@@ -62,7 +62,7 @@ public class OrderHistoryFx extends BorderPane {
         button.setId("header");
 
         gp = new GridPane();
-        gp.setHgap(20.0);
+        gp.setHgap(40.0);
         gp.setVgap(10.0);
         gp.setAlignment(Pos.TOP_CENTER);
 

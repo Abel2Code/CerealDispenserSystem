@@ -1,7 +1,0 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#touchToBegin{
-	-fx-font-size: 65pt;
-	-fx-font-weight: bold;
-	-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, green 50% , violet 75%, red 100%);
-}
-

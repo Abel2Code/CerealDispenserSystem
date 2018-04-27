@@ -9,4 +9,3 @@ Organic Milk,milk/organicMilk.png, 150, 8, 12, 8
 Rice Milk,milk/riceMilk.png, 120, 2.5, 23, 1
 Soy Milk,milk/soyMilk.png, 127, 4.7, 12.1, 11
 Whole Milk,milk/wholeMilk.png, 150, 8, 11, 8
-No Milk,milk/noMilk.png, 0, 0, 0, 0

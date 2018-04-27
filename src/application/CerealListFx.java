@@ -74,6 +74,9 @@ public class CerealListFx extends BorderPane{
         }
 
         for(int i = 0; i < y; i++) {
+            if (i == y - 1) {
+                x = cereals.size() % 4;
+            }
             for (int j = 0; j < x; j++) {
                 Button btn = new Button();
                 btn.setId(Integer.toString(counter));

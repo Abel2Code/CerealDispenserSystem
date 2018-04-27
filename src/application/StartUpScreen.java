@@ -37,14 +37,12 @@ public class StartUpScreen extends StackPane{
         getChildren().addAll(label, vbox);
 	    
 	    vbox.setAlignment(Pos.CENTER);
-	    
-	    
 	}
 
     private void startTime() {
         time = new Text();
 
-        DateFormat tf = new SimpleDateFormat("HH:mm:ss");
+        DateFormat tf = new SimpleDateFormat("hh:mm aa");
 
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -55,6 +53,7 @@ public class StartUpScreen extends StackPane{
                 ),
                 new KeyFrame(Duration.seconds(1))
         );
+
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 

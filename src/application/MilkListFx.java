@@ -13,14 +13,19 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MilkListFx extends BorderPane{
     private Button toMain;
     private Button selectButton;
     private VBox displayChosenMilk;
-    private TextField expDate;
+    private String expDate;
     private Button addMilkButton = new Button("Set Expiration Date");
     private List<Milk> milks = Container.milks;
     public static Milk selectedMilk;
@@ -77,6 +82,9 @@ public class MilkListFx extends BorderPane{
         }
 
         for(int i = 0; i < y; i++) {
+            if (i == y - 1) {
+                x = milks.size() % 4;
+            }
             for (int j = 0; j < x; j++) {
                 Button btn = new Button();
                 btn.setId(Integer.toString(counter));
@@ -211,20 +219,24 @@ public class MilkListFx extends BorderPane{
     }
 
     public void setExpirationDate() {
-        Text txt = new Text("Enter Expiration Date");
-        txt.setId("text");
 
-        expDate = new TextField();
-        expDate.setPromptText("form: MM/DD/YY");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yy");
 
         addMilkButton.setId("selectButton");
 
-        VBox vbox = new VBox();
-        vbox.getChildren().addAll(txt, expDate, addMilkButton);
-        vbox.setAlignment(Pos.CENTER);
-        vbox.setSpacing(10.0);
+        final DatePicker datePicker = new DatePicker();
+        datePicker.setOnAction(e -> {
+            LocalDate localDate = datePicker.getValue();
+            expDate = localDate.format(dtf);
+        });
 
-        setCenter(vbox);
+        VBox vBox = new VBox();
+        vBox.setAlignment(Pos.TOP_CENTER);
+        vBox.setPadding(new Insets(100, 0 , 0, 0));
+        vBox.setSpacing(10.0);
+        vBox.getChildren().addAll(datePicker, addMilkButton);
+
+        setCenter(vBox);
     }
 
 
@@ -295,7 +307,7 @@ public class MilkListFx extends BorderPane{
         return addMilkButton;
     }
 
-    public TextField getExpDate() {
+    public String getExpDate() {
         return expDate;
     }
 

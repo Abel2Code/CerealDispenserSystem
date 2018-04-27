@@ -8,7 +8,7 @@ public class Container {
 	public static Cereal[] cerealContainer;
 	public static Milk[] milkContainer;
 	private final int CEREAL_DEFAULT_SIZE = 4;
-	private final int MILK_DEFAULT_SIZE = 2;
+	private final int MILK_DEFAULT_SIZE = 3;
 
 	public Container() {
 
@@ -21,6 +21,9 @@ public class Container {
 			cerealContainer[i] = null;
 
 		}
+
+		milkContainer[2] = new Milk("No Milk", "milk/noMilk.png", 0, 0, 0,0 );
+		milkContainer[2].setExpirationDate("N/A");
 	} 
 
 	public Cereal getCereal(int index) {
