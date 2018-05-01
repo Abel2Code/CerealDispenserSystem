@@ -1,5 +1,6 @@
 package application;
 
+import back_end.Container;
 import back_end.Order;
 import back_end.OrderHistory;
 import javafx.geometry.Insets;
@@ -11,15 +12,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class OrderHistoryFx extends BorderPane {
     private Button backButton;
     private Button[] buttonContainer;
-    private VBox history;
     private GridPane gp;
-
 
     public OrderHistoryFx() {
         Image img = new Image("wallpapers/woodWallpaper.jpg");
@@ -28,6 +26,7 @@ public class OrderHistoryFx extends BorderPane {
 
         top();
         history();
+        initializeButtons();
     }
 
     public void top(){
@@ -48,7 +47,21 @@ public class OrderHistoryFx extends BorderPane {
         setTop(hbox);
     }
 
+    public void initializeButtons() {
+        buttonContainer = new Button[10];
+
+        for (int i = 0 ; i < 10 ; i++) {
+            buttonContainer[i] = new Button("Reorder");
+            buttonContainer[i].setId("reorderButton");
+        }
+    }
+
     public void history() {
+        gp = new GridPane();
+        gp.setHgap(40.0);
+        gp.setVgap(10.0);
+        gp.setAlignment(Pos.TOP_CENTER);
+
         Text name = new Text("Cereal");
         Text milk = new Text("Milk");
         Text milkExp = new Text("Milk Expiration Date");
@@ -61,46 +74,59 @@ public class OrderHistoryFx extends BorderPane {
         portion.setId("header");
         button.setId("header");
 
-        gp = new GridPane();
-        gp.setHgap(40.0);
-        gp.setVgap(10.0);
-        gp.setAlignment(Pos.TOP_CENTER);
-
-        int x = OrderHistory.orders.size() + 1;
-
         gp.add(name, 0, 0);
         gp.add(milk, 1, 0);
         gp.add(milkExp, 2, 0);
         gp.add(portion, 3, 0);
         gp.add(button, 4, 0);
 
-
         setCenter(gp);
     }
 
     public void updateHistory() {
-        int i = OrderHistory.orders.size();
+        history();
 
-        Order o = OrderHistory.orders.get(i - 1);
+        int size = OrderHistory.orders.size();
 
+        int x = size;
 
-        Label cereal = new Label(o.getCereal().getName());
-        Label milkName = new Label(o.getMilk().getName());
-        Label expDate = new Label(o.getMilk().getExpirationDate());
-        Label size = new Label(getSize(o.getPortion()));
-        Button reorder = new Button("Reorder");
-        reorder.setId("reorderButton");
+        if (size > 10) {
+            x = 10;
+        }
 
-        cereal.setId("data");
-        milkName.setId("data");
-        expDate.setId("data");
-        size.setId("data");
+        for (int i = size, j = 0 ; j <  x  ; i--, j++) {
 
-        gp.add(cereal, 0, i);
-        gp.add(milkName, 1, i);
-        gp.add(expDate, 2, i);
-        gp.add(size, 3, i);
-        gp.add(reorder, 4, i);
+            Order o = OrderHistory.orders.get(i - 1);
+
+            Label cereal = new Label(o.getCereal().getName());
+            Label milkName = new Label(o.getMilk().getName());
+            Label expDate = new Label(o.getMilk().getExpirationDate());
+            Label portion = new Label(getSize(o.getPortion()));
+            Button reorder;
+
+            if (Container.getCerealIndex(o.getCereal()) != -1 &&
+                    (Container.getMilkIndex(o.getMilk()) != -1)) {
+                reorder = buttonContainer[j];
+                reorder.setId("reorderButton");
+
+            }
+            else {
+                reorder = new Button("No longer Available");
+                reorder.setId("disabled");
+            }
+
+            cereal.setId("data");
+            milkName.setId("data");
+            expDate.setId("data");
+            portion.setId("data");
+
+            gp.add(cereal, 0, j + 1);
+            gp.add(milkName, 1, j + 1);
+            gp.add(expDate, 2, j + 1);
+            gp.add(portion, 3, j + 1);
+            gp.add(reorder, 4, j + 1);
+
+        }
 
         setCenter(gp);
     }
@@ -116,6 +142,8 @@ public class OrderHistoryFx extends BorderPane {
     }
 
     public Button getBackButton() { return backButton; }
+
+    public Button[] getButtonContainer() { return buttonContainer; }
 
 
 }

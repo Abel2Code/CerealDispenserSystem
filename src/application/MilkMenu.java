@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 
 public class MilkMenu extends BorderPane {
     private Button add;
+    private Button remove;
     private Button toStartScreen;
     private Button orderHistory;
     private Button[] buttonContainer = new Button[3];
@@ -32,7 +33,7 @@ public class MilkMenu extends BorderPane {
         add = new Button("Add");
         add.setId("add");
 
-        Button remove = new Button("Remove");
+        remove = new Button("Remove");
         remove.setId("remove");
 
         orderHistory = new Button("Order History");
@@ -73,20 +74,16 @@ public class MilkMenu extends BorderPane {
         HBox hbox = new HBox();
 
         for(int i = 0; i < 2; i++) {
-            Button addFavorites = new Button();
-            addFavorites.getStyleClass().add("favorites");
-            addFavorites.setId("container" + i);
+            buttonContainer[i] = new Button("Empty");
+            buttonContainer[i].getStyleClass().add("favorites");
+            buttonContainer[i].setId("container" + (i + 2));
 
-            addFavorites.setText("Empty");
-
-            this.buttonContainer[i] = addFavorites;
-            hbox.getChildren().add(addFavorites);
-
+            hbox.getChildren().add(buttonContainer[i]);
         }
 
         Button noMilk = new Button();
         noMilk.getStyleClass().add("favorites");
-        noMilk.setId("container3");
+        noMilk.setId("container1");
         Image img = new Image("milk/noMilk.png");
         ImageView iv = new ImageView(img);
         iv.setFitHeight(250);
@@ -115,6 +112,10 @@ public class MilkMenu extends BorderPane {
                 buttonContainer[i].setGraphic(iv);
                 buttonContainer[i].setText(null);
             }
+            else {
+                buttonContainer[i].setGraphic(null);
+                buttonContainer[i].setText("Empty");
+            }
         }
 
 
@@ -131,6 +132,8 @@ public class MilkMenu extends BorderPane {
     public Button getAdd(){
         return add;
     }
+
+    public Button getRemove() { return remove; }
 
     public Button getOrderHistory() { return orderHistory; };
 

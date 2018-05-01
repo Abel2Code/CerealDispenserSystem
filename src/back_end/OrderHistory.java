@@ -21,14 +21,14 @@ public class OrderHistory {
             s += o.getCereal().getName();
             s += " with ";
             s += o.getMilk().getName();
-            s += " size: ";
+            s += ", size: ";
 
             switch (o.getPortion()) {
-                case 0: s += "small";
+                case 0: s += "Small";
                         break;
-                case 1: s += "medium";
+                case 1: s += "Medium";
                         break;
-                case 2: s+= "large";
+                case 2: s+= "Large";
                         break;
                 default: break;
             }

@@ -2,28 +2,18 @@ package application;
 
 import back_end.Container;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
-public class CerealMenu extends BorderPane {
-    private Button add;
-    private Button remove;
+public class RemoveCerealFx extends BorderPane {
     private Button toStartScreen;
-    private Button orderHistory;
     private Button[] buttonContainer = new Button[4];
 
-    public CerealMenu() {
+    public RemoveCerealFx() {
         Image img = new Image("wallpapers/woodWallpaper.jpg");
         ImageView iv = new ImageView(img);
 
@@ -31,29 +21,6 @@ public class CerealMenu extends BorderPane {
 
         top();
         container();
-        menu();
-    }
-
-    public void menu(){
-        HBox hbox = new HBox();
-
-        add = new Button("Add");
-        add.setId("add");
-
-        remove = new Button("Remove");
-        remove.setId("remove");
-
-        orderHistory = new Button("Order History");
-        orderHistory.setId("button");
-
-        Button storageContainer = new Button("Storage View");
-        storageContainer.setId("button");
-
-        hbox.setPadding(new Insets(18.0,0,10.0,14.0));
-        hbox.setSpacing(15.0);
-        hbox.getChildren().addAll(add, remove, orderHistory, storageContainer);
-
-        setBottom(hbox);
     }
 
     public void top(){
@@ -61,15 +28,14 @@ public class CerealMenu extends BorderPane {
         toStartScreen = new Button("[Back]");
         toStartScreen.setId("back");
 
-        Text label = new Text("Cereal Menu");
+        Text label = new Text("Remove Cereal");
         label.setId("title");
 
         Button notifications = new Button("!");
         notifications.setId("notifications");
 
-        hbox.setSpacing(180.0);
+        hbox.setSpacing(200.0);
         hbox.setPadding(new Insets(30.0, 0, 0,0));
-
 
         hbox.getChildren().addAll(toStartScreen, label, notifications);
         setTop(hbox);
@@ -93,7 +59,6 @@ public class CerealMenu extends BorderPane {
         hbox.setPadding(new Insets(30.0, 10.0, 0,30.0));
         setCenter(hbox);
 
-
     }
 
     public void refreshFx(){
@@ -114,23 +79,10 @@ public class CerealMenu extends BorderPane {
         }
     }
 
-    public Button[] getButtonContainer() {
-        return buttonContainer;
-    }
+    public Button[] getButtonContainer() { return buttonContainer; }
 
-    public Button getToStartScreen(){
+    public Button getToStartScreen() {
         return toStartScreen;
     }
 
-    public Button getAdd(){
-        return add;
-    }
-
-    public Button getOrderHistory() { return orderHistory; }
-
-    public Button getRemove() {return remove; }
-
-
-
 }
-
