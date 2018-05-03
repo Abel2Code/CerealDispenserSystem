@@ -21,6 +21,8 @@ public class CerealMenu extends BorderPane {
     private Button remove;
     private Button toStartScreen;
     private Button orderHistory;
+    private Button storageContainer;
+    private Button info;
     private Button[] buttonContainer = new Button[4];
 
     public CerealMenu() {
@@ -46,12 +48,26 @@ public class CerealMenu extends BorderPane {
         orderHistory = new Button("Order History");
         orderHistory.setId("button");
 
-        Button storageContainer = new Button("Storage View");
+        storageContainer = new Button("Storage View");
         storageContainer.setId("button");
+
+        Button assistant = new Button("Voice Assistant: ON");
+        assistant.setId("button");
+
+        assistant.setOnAction(e -> {
+            if(assistant.getText().contains("ON")){
+                assistant.setText("Voice Assistant: OFF");
+                Speech.isMute = true;
+            }
+            else if(assistant.getText().contains("OFF")){
+                assistant.setText("Voice Assistant: ON");
+                Speech.isMute = false;
+            }
+        });
 
         hbox.setPadding(new Insets(18.0,0,10.0,14.0));
         hbox.setSpacing(15.0);
-        hbox.getChildren().addAll(add, remove, orderHistory, storageContainer);
+        hbox.getChildren().addAll(add, remove, orderHistory, storageContainer, assistant);
 
         setBottom(hbox);
     }
@@ -64,14 +80,14 @@ public class CerealMenu extends BorderPane {
         Text label = new Text("Cereal Menu");
         label.setId("title");
 
-        Button notifications = new Button("!");
-        notifications.setId("notifications");
+        info = new Button("i");
+        info.setId("notifications");
 
         hbox.setSpacing(180.0);
         hbox.setPadding(new Insets(30.0, 0, 0,0));
 
 
-        hbox.getChildren().addAll(toStartScreen, label, notifications);
+        hbox.getChildren().addAll(toStartScreen, label, info);
         setTop(hbox);
     }
 
@@ -126,9 +142,24 @@ public class CerealMenu extends BorderPane {
         return add;
     }
 
-    public Button getOrderHistory() { return orderHistory; }
+    public Button getOrderHistory() {
+        return orderHistory;
+    }
 
-    public Button getRemove() {return remove; }
+    public Button getRemove() {
+        return remove;
+    }
+
+    public Button getStorageContainer() {
+        return storageContainer;
+    }
+
+    public Button getInfo() {
+        return info;
+    }
+
+
+
 
 
 

@@ -14,6 +14,8 @@ public class MilkMenu extends BorderPane {
     private Button remove;
     private Button toStartScreen;
     private Button orderHistory;
+    private Button info;
+    private Button storageContainer;
     private Button[] buttonContainer = new Button[3];
 
     public MilkMenu() {
@@ -39,15 +41,12 @@ public class MilkMenu extends BorderPane {
         orderHistory = new Button("Order History");
         orderHistory.setId("button");
 
-        Button storageContainer = new Button("Storage View");
+        storageContainer = new Button("Storage View");
         storageContainer.setId("button");
-
-        Button refill = new Button("Replenish Storage");
-        refill.setId("button");
 
         hbox.setPadding(new Insets(18.0,0,10.0,14.0));
         hbox.setSpacing(15.0);
-        hbox.getChildren().addAll(add, remove, orderHistory, refill, storageContainer);
+        hbox.getChildren().addAll(add, remove, orderHistory, storageContainer);
 
         setBottom(hbox);
     }
@@ -60,13 +59,13 @@ public class MilkMenu extends BorderPane {
         Text label = new Text("Milk Menu");
         label.setId("title");
 
-        Button notifications = new Button("!");
-        notifications.setId("notifications");
+        info = new Button("i");
+        info.setId("notifications");
 
         hbox.setSpacing(204.0);
         hbox.setPadding(new Insets(30.0, 0, 0,0));
 
-        hbox.getChildren().addAll(toStartScreen, label, notifications);
+        hbox.getChildren().addAll(toStartScreen, label, info);
         setTop(hbox);
     }
 
@@ -136,6 +135,10 @@ public class MilkMenu extends BorderPane {
     public Button getRemove() { return remove; }
 
     public Button getOrderHistory() { return orderHistory; };
+
+    public Button getInfo() { return info; }
+
+    public Button getStorageContainer() { return  storageContainer; }
 
 
 

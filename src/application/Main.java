@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Main extends Application {
@@ -28,8 +29,11 @@ public class Main extends Application {
 			MilkListFx milkList = new MilkListFx();
 			Portions portions = new Portions();
 			PourFx pourFx = new PourFx();
+			InformationFX info = new InformationFX();
+			SplashScreenFX completed = new SplashScreenFX();
 			RemoveCerealFx removeCerealFx = new RemoveCerealFx();
 			RemoveMilkFx removeMilkFx = new RemoveMilkFx();
+			StorageViewFX cerealStorage = new StorageViewFX("Cereal Storage");
 			OrderHistoryFx orderHistoryFx = new OrderHistoryFx();
 			Button[] cerealButtons = cerealMenu.getButtonContainer();
 			Button[] milkButtons = milkMenu.getButtonContainer();
@@ -38,8 +42,10 @@ public class Main extends Application {
 			mainScene.getStylesheets().add(getClass().getResource("styling/application.css").toExternalForm());
 
 			startScreenController(cerealMenu, mainScene, start);
-			cerealMenuController(cerealMenu, mainScene, start, cerealList, orderHistoryFx, removeCerealFx);
-			milkMenuController(milkMenu, mainScene, cerealMenu, milkList, orderHistoryFx, removeMilkFx);
+			cerealMenuController(cerealMenu, mainScene, start, cerealList, orderHistoryFx, removeCerealFx, cerealStorage, info);
+			milkMenuController(milkMenu, mainScene, cerealMenu, milkList, orderHistoryFx, removeMilkFx, info);
+			cerealStorageController(mainScene, cerealMenu, cerealStorage);
+			informationController(cerealMenu, mainScene, info);
 			cerealListFXController(cerealMenu, mainScene, cerealList);
 			milkListFXController(milkMenu, mainScene, milkList);
 			cerealButtonController(milkMenu, mainScene, cerealButtons);
@@ -48,7 +54,8 @@ public class Main extends Application {
 			orderHistoryFxController(cerealMenu, mainScene, pourFx, orderHistoryFx, container);
 			removeCerealFxController(cerealMenu, mainScene, removeCerealFx);
 			removeMilkFxController(milkMenu, mainScene, removeMilkFx);
-			pourFxController(pourFx, orderHistory, mainScene, start, portions);
+			completedController(mainScene, start, completed);
+			pourFxController(pourFx, orderHistory, mainScene, start, portions, completed);
 
 			primaryStage.setScene(mainScene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -65,12 +72,31 @@ public class Main extends Application {
 	}
 
 	public void startScreenController(CerealMenu cerealMenu, Scene mainScene, StartUpScreen start){
-		start.setOnMouseClicked(e -> mainScene.setRoot(cerealMenu));
+    	Calendar now = Calendar.getInstance();
+
+		start.setOnMouseClicked(e -> {
+			mainScene.setRoot(cerealMenu);
+			if(now.get(Calendar.HOUR_OF_DAY) <= 10){
+				Speech.stop();
+				Speech.player("resources/speech/greetings/GoodMorning.mp3");
+			}else if(now.get(Calendar.HOUR_OF_DAY) >= 11 && now.get(Calendar.HOUR_OF_DAY) <= 16){
+				Speech.stop();
+				Speech.player("resources/speech/greetings/GoodAfternoon.mp3");
+			}else{
+				Speech.stop();
+				Speech.player("resources/speech/greetings/GoodEvening.mp3");
+			}
+		});
 	}
 
-	public void cerealMenuController(CerealMenu cerealMenu, Scene mainScene, StartUpScreen start, CerealListFx cerealList, OrderHistoryFx orderHistoryFx, RemoveCerealFx removeCerealFx){
+	public void cerealMenuController(CerealMenu cerealMenu, Scene mainScene, StartUpScreen start, CerealListFx cerealList,
+									 OrderHistoryFx orderHistoryFx, RemoveCerealFx removeCerealFx, StorageViewFX storage, InformationFX info){
 		cerealMenu.getToStartScreen().setOnAction(e -> mainScene.setRoot(start));
-		cerealMenu.getAdd().setOnAction(e -> mainScene.setRoot(cerealList));
+		cerealMenu.getAdd().setOnAction(e -> {
+			mainScene.setRoot(cerealList);
+			Speech.stop();
+			Speech.player("resources/speech/instructions/SelectCereal.mp3");
+		});
 		cerealMenu.getOrderHistory().setOnAction(e -> {
 			orderHistoryFx.updateHistory();
 			mainScene.setRoot(orderHistoryFx);
@@ -80,14 +106,23 @@ public class Main extends Application {
 			removeCerealFx.refreshFx();
 			mainScene.setRoot(removeCerealFx);
 		});
+		cerealMenu.getStorageContainer().setOnAction(e -> {
+			mainScene.setRoot(storage);
+			storage.displayStorage();
+		});
+		cerealMenu.getInfo().setOnAction(e -> {
+			mainScene.setRoot(info);
+		});
 	}
 
-	public void milkMenuController(MilkMenu milkMenu, Scene mainScene, CerealMenu cerealMenu, MilkListFx milkList, OrderHistoryFx orderHistoryFx, RemoveMilkFx removeMilkFx) {
+	public void milkMenuController(MilkMenu milkMenu, Scene mainScene, CerealMenu cerealMenu, MilkListFx milkList, OrderHistoryFx orderHistoryFx, RemoveMilkFx removeMilkFx, InformationFX info) {
 		milkMenu.getToStartScreen().setOnAction(e -> mainScene.setRoot(cerealMenu));
 		milkMenu.getAdd().setOnAction(e -> {
 
 		    milkList.setCenter(milkList.scroll(milkList.gridOfMilk(Container.milks)));
 		    mainScene.setRoot(milkList);
+			Speech.stop();
+			Speech.player("resources/speech/instructions/SelectMilk.mp3");
         });
 		
 		milkMenu.getOrderHistory().setOnAction(e -> {
@@ -100,6 +135,25 @@ public class Main extends Application {
 			mainScene.setRoot(removeMilkFx);
 		});
 
+		milkMenu.getInfo().setOnAction(e -> {
+			mainScene.setRoot(info);
+		});
+
+	}
+
+	public void informationController(CerealMenu cerealMenu, Scene mainScene, InformationFX info){
+		info.getBack().setOnAction(e -> mainScene.setRoot(cerealMenu));
+	}
+
+	public void cerealStorageController(Scene mainScene, CerealMenu menu, StorageViewFX s){
+		s.getBack().setOnAction(e -> mainScene.setRoot(menu));
+	}
+
+	public void completedController(Scene mainScene, StartUpScreen start, SplashScreenFX splashScreenFX){
+		splashScreenFX.getDone().setOnAction(e -> {
+			mainScene.setRoot(start);
+
+		});
 	}
 
 	public void cerealListFXController(CerealMenu cerealMenu, Scene mainScene, CerealListFx cerealList){
@@ -252,6 +306,8 @@ public class Main extends Application {
 			if (Container.milkContainer[0] != null) {
 				Choice.setMilkChoice(0);
 				mainScene.setRoot(portions);
+				Speech.stop();
+				Speech.player("resources/speech/instructions/portion.mp3");
 			}
 		});
 
@@ -259,12 +315,16 @@ public class Main extends Application {
 			if (Container.milkContainer[1] != null) {
 				Choice.setMilkChoice(1);
 				mainScene.setRoot(portions);
+				Speech.stop();
+				Speech.player("resources/speech/instructions/portion.mp3");
 			}
 		});
 
 		milkButtons[2].setOnAction(event -> {
 		    Choice.setMilkChoice(2);
 		    mainScene.setRoot(portions);
+			Speech.stop();
+			Speech.player("resources/speech/instructions/portion.mp3");
 
         });
 	}
@@ -425,13 +485,16 @@ public class Main extends Application {
 		}
 	}
 
-	public void pourFxController(PourFx pourFx, OrderHistory orderHistory, Scene mainScene, StartUpScreen start, Portions portions) {
+	public void pourFxController(PourFx pourFx, OrderHistory orderHistory, Scene mainScene, StartUpScreen start, Portions portions, SplashScreenFX completed) {
 		pourFx.getPourButton().setOnAction(e -> {
 			OrderHistory.addOrder(Choice.cerealChoice, Choice.milkChoice, Choice.portionChoice);
 			System.out.println(orderHistory.toString());
 
 			Choice.clearChoice();
-			mainScene.setRoot(start);
+			mainScene.setRoot(completed);
+			completed.progress(99999999);
+			Speech.stop();
+			Speech.player("resources/speech/actions/dispense.mp3");
 
 		});
 

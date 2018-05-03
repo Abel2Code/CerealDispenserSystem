@@ -18,6 +18,7 @@ public class Milk {
 		this.fat = fat;
 		this.carbs = carbs;
 		this.protein = protein;
+		this.capacity = DEFAULT;
 	}
 
 	public String getName() {
@@ -57,5 +58,26 @@ public class Milk {
 	}
 
 	public String getExpirationDate() { return expirationDate; }
+
+	public void subtract(){
+		if(Choice.portionChoice == 0){
+			this.capacity -= 20;
+			setZeroIfEmpty();
+		}
+		else if(Choice.portionChoice == 1){
+			this.capacity -= 40;
+			setZeroIfEmpty();
+		}
+		else{
+			this.capacity -= 50;
+			setZeroIfEmpty();
+		}
+	}
+
+	public void setZeroIfEmpty(){
+		if(this.capacity <= 0){
+			this.capacity = 0;
+		}
+	}
 
 }
