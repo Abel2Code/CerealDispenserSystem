@@ -25,9 +25,9 @@ public class Driver {
 		//****************************************************************************************
 		//*********************************TESTING DATABASE***************************************
 		//****************************************************************************************
-		Container c = new Container();
-		DataReader.readData(DataReader.cerealDataBase);
-		System.out.println(c.toString());
+
+		DataReader.readFile(DataReader.readMe);
+
 
 
 	}

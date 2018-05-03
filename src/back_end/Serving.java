@@ -19,7 +19,7 @@ public class Serving {
 	}
 
 	public String toString() {
-		return size + " " + cereal.getName() + " with " + milk.getType();
+		return size + " " + cereal.getName() + " with " + milk.getName();
 	}	
 
 }

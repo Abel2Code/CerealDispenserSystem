@@ -8,7 +8,6 @@ public class Cereal {
 	private double carbs;
 	private double protein;
 	private int capacity;
-	private final int DEFAULT = 100;
 
 	public Cereal(String name,String img,double calories, double fat,double carbs,double protein) {
 		this.name = name;
@@ -17,11 +16,7 @@ public class Cereal {
 		this.fat = fat;
 		this.carbs = carbs;
 		this.protein = protein;
-	}
-
-	public Cereal(String name) {
-		this.name = name;
-		this.capacity = DEFAULT;
+		capacity = 100;
 	}
 	
 	public String getName() {
@@ -54,6 +49,27 @@ public class Cereal {
 
 	public double getProtein() {
 		return protein;
+	}
+
+	public void subtract(){
+		if(Choice.portionChoice == 0){
+			this.capacity -= 10;
+			setZeroIfEmpty();
+		}
+		else if(Choice.portionChoice == 1){
+			this.capacity -= 10;
+			setZeroIfEmpty();
+		}
+		else{
+			this.capacity -= 30;
+			setZeroIfEmpty();
+		}
+	}
+
+	public void setZeroIfEmpty(){
+		if(this.capacity <= 0){
+			this.capacity = 0;
+		}
 	}
 	
 }

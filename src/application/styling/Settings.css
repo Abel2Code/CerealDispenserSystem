@@ -10,3 +10,17 @@
 	-fx-font-size: 60px;
 	-fx-font-weight: bold;
 }
+
+#infoBox {
+    -fx-background-color: white;
+    -fx-min-width: 200;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+

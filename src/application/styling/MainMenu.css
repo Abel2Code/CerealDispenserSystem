@@ -1,4 +1,4 @@
-#addFavorites{
+addFavorites{
 	-fx-border-radius: 30.0;
 	-fx-background-color: transparent;
 	-fx-border-color: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, red 50% , violet 75%, red 100%);
@@ -10,6 +10,25 @@
 	-fx-pref-height: 5em;
     
 	
+}
+
+.button {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 18.0;
+    -fx-min-size: 175.0, 0;
+}
+
+#add {
+    -fx-border-color: Green;
+}
+
+#remove {
+    -fx-border-color: Red;
 }
 
 #setting{

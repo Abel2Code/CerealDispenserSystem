@@ -7,7 +7,8 @@ public class DataReader {
 	
 	public static final String cerealDataBase = "resources/dataBase/cerealData.txt";
 	public static final String milkDataBase = "resources/dataBase/milkData.txt";
-	
+	public static final String readMe = "resources/database/README.txt";
+
 
 	private DataReader() {
 		
@@ -42,10 +43,25 @@ public class DataReader {
 			System.out.println("Error in reading Database.");
 		}
 	}
-
 	
-	public static void readPreferences() {
-		
+	public static String readFile(String file) {
+		String line = null;
+		String finished = "";
+
+		try {
+			FileReader fileReader = new FileReader(file);
+			BufferedReader buffer = new BufferedReader(fileReader);
+
+			while((line = buffer.readLine()) != null) {
+				finished = finished + line +"\n";
+			}
+
+			buffer.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Error in reading Database.");
+		}
+		return finished;
 	}
 	
 	public static void writePreferences() {

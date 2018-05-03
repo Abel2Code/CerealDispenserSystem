@@ -1,0 +1,180 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.favorites {
+    -fx-border-radius: 30.0;
+    -fx-border-width: 4.0;
+    -fx-background-color: Transparent;
+    -fx-background-size: Cover;
+    -fx-pref-width: 175.0;
+    -fx-pref-height: 300.0;
+    -fx-max-width: 175.0;
+    -fx-max-height: 300.0;
+}
+
+#container0 {
+    -fx-border-color: rgb(56, 165, 237);
+}
+
+#container1 {
+    -fx-border-color: rgb(239, 9, 162);
+}
+
+#container2 {
+    -fx-border-color: rgb(198, 98, 229);
+}
+
+#container3 {
+    -fx-border-color: rgb(157, 242, 142);
+}
+
+
+
+
+
+#button {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 18.0;
+    -fx-min-width: 100.0;
+}
+
+#bigButton {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 20.0;
+    -fx-min-width: 500.0;
+    -fx-min-height: 100.0;
+}
+
+#pourButton {
+    -fx-border-color: rgb(18, 148, 255);
+    -fx-border-width: 2.0;
+    -fx-border-radius: 45.0;
+    -fx-background-color: Transparent;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 50.0;
+    -fx-text-fill: white;
+    -fx-min-width: 500.0;
+    -fx-min-height: 120.0;
+}
+
+#selectButton {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 15.0;
+}
+
+#reorderButton {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 10.0;
+}
+
+#portionButton {
+    -fx-background-color: Transparent;
+    -fx-border-color: Black;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 20.0;
+    -fx-min-width: 500.0;
+    -fx-min-height: 100.0;
+}
+
+
+#back {
+    -fx-background-color: Transparent;
+    -fx-text-fill: Red;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-min-width: 80;
+}
+
+#add {
+    -fx-background-color: Transparent;
+    -fx-border-color: Green;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 18.0;
+    -fx-min-width: 100.0;
+    -fx-min-height: 0;
+}
+
+#remove {
+    -fx-background-color: Transparent;
+    -fx-border-color: Red;
+    -fx-border-width: 2.0;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 18.0;
+    -fx-min-width: 100.0;
+    -fx-min-height: 0;
+}
+
+#title {
+    -fx-fill: rgb(18, 148, 255);
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 43.0;
+}
+
+#notifications {
+    -fx-background-color: Transparent;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 30.0;
+    -fx-min-width: 80.0;
+    -fx-min-height: 50.0;
+}
+
+#header {
+    -fx-fill: rgb(18, 148, 255);
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 20.0;
+}
+
+#data {
+    -fx-font-family: Helvetica;
+    -fx-font-size: 15.0;
+    -fx-text-align: center;
+    -fx-max-width: 150;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+#touchToBegin{
+	-fx-font-size: 65pt;
+	-fx-font-weight: bold;
+	-fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 20%, yellow 25%, green 50% , violet 75%, red 100%);
+}
+
+
+
