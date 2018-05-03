@@ -489,6 +489,8 @@ public class Main extends Application {
 		pourFx.getPourButton().setOnAction(e -> {
 			OrderHistory.addOrder(Choice.cerealChoice, Choice.milkChoice, Choice.portionChoice);
 			System.out.println(orderHistory.toString());
+			Container.cerealContainer[Choice.cerealChoice].subtract();
+			Container.milkContainer[Choice.milkChoice].subtract();
 
 			Choice.clearChoice();
 			mainScene.setRoot(completed);
