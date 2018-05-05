@@ -49,6 +49,8 @@ public class StorageViewFX extends BorderPane {
     public VBox oneStorageView(int index, int type) {
         VBox vbox = new VBox();
         if (this.storageName.contains("Cereal")) {
+
+
             Rectangle r = new Rectangle(100, Container.cerealContainer[index].getCapacity() * 3);
             Rectangle r2 = new Rectangle(100, Container.milkContainer[index].getCapacity() * 3);
 
