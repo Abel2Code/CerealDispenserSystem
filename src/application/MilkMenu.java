@@ -11,8 +11,11 @@ import javafx.scene.text.Text;
 
 public class MilkMenu extends BorderPane {
     private Button add;
+    private Button remove;
     private Button toStartScreen;
     private Button orderHistory;
+    private Button info;
+    private Button storageContainer;
     private Button[] buttonContainer = new Button[3];
 
     public MilkMenu() {
@@ -32,15 +35,14 @@ public class MilkMenu extends BorderPane {
         add = new Button("Add");
         add.setId("add");
 
-        Button remove = new Button("Remove");
+        remove = new Button("Remove");
         remove.setId("remove");
 
         orderHistory = new Button("Order History");
         orderHistory.setId("button");
 
-        Button storageContainer = new Button("Storage View");
+        storageContainer = new Button("Storage View");
         storageContainer.setId("button");
-
 
         hbox.setPadding(new Insets(18.0,0,10.0,14.0));
         hbox.setSpacing(15.0);
@@ -57,13 +59,13 @@ public class MilkMenu extends BorderPane {
         Text label = new Text("Milk Menu");
         label.setId("title");
 
-        Button notifications = new Button("i");
-        notifications.setId("notifications");
+        info = new Button("i");
+        info.setId("notifications");
 
         hbox.setSpacing(204.0);
         hbox.setPadding(new Insets(30.0, 0, 0,0));
 
-        hbox.getChildren().addAll(toStartScreen, label, notifications);
+        hbox.getChildren().addAll(toStartScreen, label, info);
         setTop(hbox);
     }
 
@@ -71,20 +73,16 @@ public class MilkMenu extends BorderPane {
         HBox hbox = new HBox();
 
         for(int i = 0; i < 2; i++) {
-            Button addFavorites = new Button();
-            addFavorites.getStyleClass().add("favorites");
-            addFavorites.setId("container" + i);
+            buttonContainer[i] = new Button("Empty");
+            buttonContainer[i].getStyleClass().add("favorites");
+            buttonContainer[i].setId("container" + (i + 2));
 
-            addFavorites.setText("Empty");
-
-            this.buttonContainer[i] = addFavorites;
-            hbox.getChildren().add(addFavorites);
-
+            hbox.getChildren().add(buttonContainer[i]);
         }
 
         Button noMilk = new Button();
         noMilk.getStyleClass().add("favorites");
-        noMilk.setId("container3");
+        noMilk.setId("container1");
         Image img = new Image("milk/noMilk.png");
         ImageView iv = new ImageView(img);
         iv.setFitHeight(250);
@@ -113,6 +111,10 @@ public class MilkMenu extends BorderPane {
                 buttonContainer[i].setGraphic(iv);
                 buttonContainer[i].setText(null);
             }
+            else {
+                buttonContainer[i].setGraphic(null);
+                buttonContainer[i].setText("Empty");
+            }
         }
 
 
@@ -130,7 +132,13 @@ public class MilkMenu extends BorderPane {
         return add;
     }
 
+    public Button getRemove() { return remove; }
+
     public Button getOrderHistory() { return orderHistory; };
+
+    public Button getInfo() { return info; }
+
+    public Button getStorageContainer() { return  storageContainer; }
 
 
 

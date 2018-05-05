@@ -11,8 +11,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
-import java.awt.*;
-
 public class InformationFX extends BorderPane {
     private String text;
     private Button back;

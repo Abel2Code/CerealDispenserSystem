@@ -87,6 +87,17 @@
     -fx-font-size: 10.0;
 }
 
+#disabled {
+    -fx-background-color: Transparent;
+    -fx-border-color: Gray;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 30.0;
+    -fx-font-family: Helvetica;
+    -fx-font-weight: Bold;
+    -fx-font-size: 10.0;
+    -fx-text-fill: Gray;
+}
+
 #portionButton {
     -fx-background-color: Transparent;
     -fx-border-color: Black;

@@ -8,7 +8,7 @@ public class Milk {
 	private double protein;
 	private int capacity;
 	private String expirationDate;
-
+	private final int DEFAULT = 100;
 
 
 	public Milk(String name, String img, double calories, double fat, double carbs, double protein){
@@ -18,7 +18,7 @@ public class Milk {
 		this.fat = fat;
 		this.carbs = carbs;
 		this.protein = protein;
-		this.capacity = 100;
+		this.capacity = DEFAULT;
 	}
 
 	public String getName() {

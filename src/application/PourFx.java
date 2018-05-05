@@ -1,14 +1,10 @@
 package application;
 
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-
 
 public class PourFx extends BorderPane {
     private Button pourButton;
@@ -29,7 +25,6 @@ public class PourFx extends BorderPane {
         setTop(backButton);
         setCenter(pourButton);
     }
-
 
     public Button getPourButton() {
         return pourButton;

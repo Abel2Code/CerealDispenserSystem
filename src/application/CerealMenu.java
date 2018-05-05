@@ -18,6 +18,7 @@ import javafx.scene.text.Text;
 
 public class CerealMenu extends BorderPane {
     private Button add;
+    private Button remove;
     private Button toStartScreen;
     private Button orderHistory;
     private Button storageContainer;
@@ -25,7 +26,6 @@ public class CerealMenu extends BorderPane {
     private Button[] buttonContainer = new Button[4];
 
     public CerealMenu() {
-        this.info = new Button("i");
         Image img = new Image("wallpapers/woodWallpaper.jpg");
         ImageView iv = new ImageView(img);
 
@@ -42,7 +42,7 @@ public class CerealMenu extends BorderPane {
         add = new Button("Add");
         add.setId("add");
 
-        Button remove = new Button("Remove");
+        remove = new Button("Remove");
         remove.setId("remove");
 
         orderHistory = new Button("Order History");
@@ -80,6 +80,7 @@ public class CerealMenu extends BorderPane {
         Text label = new Text("Cereal Menu");
         label.setId("title");
 
+        info = new Button("i");
         info.setId("notifications");
 
         hbox.setSpacing(180.0);
@@ -122,6 +123,10 @@ public class CerealMenu extends BorderPane {
                 buttonContainer[i].setGraphic(iv);
                 buttonContainer[i].setText(null);
             }
+            else {
+                buttonContainer[i].setGraphic(null);
+                buttonContainer[i].setText("Empty");
+            }
         }
     }
 
@@ -137,11 +142,24 @@ public class CerealMenu extends BorderPane {
         return add;
     }
 
-    public Button getOrderHistory() { return orderHistory; }
+    public Button getOrderHistory() {
+        return orderHistory;
+    }
 
-    public Button getInfo(){ return info; }
+    public Button getRemove() {
+        return remove;
+    }
 
-    public Button getStorageContainer() { return storageContainer; }
+    public Button getStorageContainer() {
+        return storageContainer;
+    }
+
+    public Button getInfo() {
+        return info;
+    }
+
+
+
 
 
 

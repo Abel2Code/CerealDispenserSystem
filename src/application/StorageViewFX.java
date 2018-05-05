@@ -11,7 +11,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.scene.transform.Rotate;
 
 public class StorageViewFX extends BorderPane {
     private String storageName;
@@ -36,7 +35,7 @@ public class StorageViewFX extends BorderPane {
 
             for(int i = 0; i <=1; i++){
                 if(Container.milkContainer[i] != null){
-                    VBox milk = oneStorageView(i, 1);
+                    VBox milk = milkStorageView(i, 1);
                     hbox.getChildren().add(milk);
                 }
             }
@@ -49,28 +48,32 @@ public class StorageViewFX extends BorderPane {
 
     public VBox oneStorageView(int index, int type) {
         VBox vbox = new VBox();
-        if (this.storageName.contains("Cereal")) {
             Rectangle r = new Rectangle(100, Container.cerealContainer[index].getCapacity() * 3);
-            Rectangle r2 = new Rectangle(100, Container.milkContainer[index].getCapacity() * 3);
 
-            r.setFill(Color.TRANSPARENT);
+            r.setFill(Color.DARKCYAN);
             r.setStroke(Color.DARKCYAN);
             r.setStrokeWidth(3.0);
 
-            r2.setFill(Color.TRANSPARENT);
+            Text cerealName = new Text(Container.cerealContainer[index].getName() + "\n(Container " + (index + 1) + ")");
+            vbox.getChildren().addAll(r, cerealName);
+            vbox.setSpacing(15.0);
+
+        return vbox;
+    }
+
+    public VBox milkStorageView(int index, int type) {
+        VBox vbox = new VBox();
+            Rectangle r2 = new Rectangle(100, Container.milkContainer[index].getCapacity() * 3);
+
+            r2.setFill(Color.STEELBLUE);
             r2.setStroke(Color.STEELBLUE);
             r2.setStrokeWidth(3.0);
-            if (type == 0) {
-                Text cerealName = new Text(Container.cerealContainer[index].getName() + "\n(Container " + (index + 1) + ")");
-                vbox.getChildren().addAll(r, cerealName);
-            } else {
-                Text milkName = new Text(Container.milkContainer[index].getName() + "\n(Container " + (index + 1) + ")");
-                vbox.getChildren().addAll(r2, milkName);
-            }
+
+            Text milkName = new Text(Container.milkContainer[index].getName() + "\n(Container " + (index + 1) + ")");
+            vbox.getChildren().addAll(r2, milkName);
 
             vbox.setSpacing(15.0);
 
-        }
         return vbox;
     }
 

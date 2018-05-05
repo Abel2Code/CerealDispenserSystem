@@ -1,5 +1,7 @@
 package back_end;
 
+import javafx.scene.control.DatePicker;
+
 public class Cereal {
 	private String name;
 	private String image;
@@ -8,6 +10,7 @@ public class Cereal {
 	private double carbs;
 	private double protein;
 	private int capacity;
+	private final int DEFAULT = 100;
 
 	public Cereal(String name,String img,double calories, double fat,double carbs,double protein) {
 		this.name = name;
@@ -16,7 +19,7 @@ public class Cereal {
 		this.fat = fat;
 		this.carbs = carbs;
 		this.protein = protein;
-		capacity = 100;
+		this.capacity = DEFAULT;
 	}
 	
 	public String getName() {
@@ -57,7 +60,7 @@ public class Cereal {
 			setZeroIfEmpty();
 		}
 		else if(Choice.portionChoice == 1){
-			this.capacity -= 10;
+			this.capacity -= 20;
 			setZeroIfEmpty();
 		}
 		else{
