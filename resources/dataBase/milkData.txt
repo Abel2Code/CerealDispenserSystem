@@ -1,0 +1,12 @@
+2% Milk,milk/2%milk.png, 122, 4.8, 11.4, 8.1
+Almond Milk,milk/almondMilk.png, 30, 2.5, 1, 1
+Coconut Milk,milk/coconutMilk.png, 90, 5, 9, 1
+Fat-Free Milk,milk/fatFreeMilk.png, 80, 0, 12, 8
+Hemp Milk,milk/hempMilk.png, 90, 8, 1, 2
+Lactose-Free Milk,milk/lactoseFreeMilk.png, 109, 2.5, 13, 8
+Oat Milk,milk/oatMilk.png, 120, 2, 24, 3
+Organic Milk,milk/organicMilk.png, 150, 8, 12, 8
+Rice Milk,milk/riceMilk.png, 120, 2.5, 23, 1
+Soy Milk,milk/soyMilk.png, 127, 4.7, 12.1, 11
+Whole Milk,milk/wholeMilk.png, 150, 8, 11, 8
+No Milk,milk/noMilk.png, 0, 0, 0, 0
