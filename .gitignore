@@ -1,6 +1,25 @@
-*
-!src
-!resources
-*.*
+*.class
+build.fxbuild
+.settings
+.classpath
+.project
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*/bin
+*bin
+*.bin
+*bin
+
+*.iml
+
+*build
+*/build
+
+*out
+*/out
 
 
