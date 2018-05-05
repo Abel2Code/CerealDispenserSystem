@@ -13,3 +13,11 @@ build.fxbuild
 *bin
 *.bin
 *bin
+
+*.iml
+
+*build
+*/build
+
+*out
+*/out

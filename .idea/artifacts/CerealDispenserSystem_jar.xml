@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CerealDispenserSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CerealDispenserSystem_jar</output-path>
+    <root id="archive" name="CerealDispenserSystem.jar">
+      <element id="module-output" name="CerealDispenserSystem" />
+    </root>
+  </artifact>
+</component>
